@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logeshwaran V - Back-End Developer</title>
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+      background: linear-gradient(270deg, #ff0080, #ff8c00, #40e0d0, #8a2be2);
+      background-size: 800% 800%;
+      animation: gradientAnimation 15s ease infinite;
+      color: #ffffff;
+      line-height: 1.6;
+      padding: 0;
+      margin: 0;
+      scroll-behavior: smooth;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 100px auto;
+      padding: 20px;
+      background-color: #2c001e;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      position: relative;
+      color: #ffffff;
+    }
+
+    .typed-text {
+      font-size: 1.2em;
+      white-space: pre-wrap;
+      color: #00ff00;
+    }
+
+    .prompt {
+      color: #4e9a06;
+    }
+
+    .command {
+      color: #729fcf;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      text-align: center;
+      color: #00ffcb;
+      margin-bottom: 20px;
+    }
+
+    a {
+      color: #729fcf;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    nav a {
+      color: #00ffcb;
+      text-decoration: none;
+      font-size: 1.1em;
+      padding: 5px 10px;
+      border-radius: 4px;
+      background-color: rgba(0, 255, 255, 0.1);
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+      background-color: rgba(0, 255, 255, 0.3);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 50px 20px;
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+      }
+
+      nav a {
+        font-size: 0.9em;
+        padding: 5px 8px;
+      }
+
+      .typed-text {
+        font-size: 1em;
+      }
+    }
+
+    @media (max-width: 400px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        font-size: 0.85em;
+        padding: 8px;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Logeshwaran V's Resume</h1>
+    
+    <!-- Navbar -->
+    <nav>
+      <a id="whoami" class="nav-command">whoami</a>
+      <a id="contact" class="nav-command">contact</a>
+      <a id="education" class="nav-command">education</a>
+      <a id="certifications" class="nav-command">certifications</a>
+      <a id="projects" class="nav-command">projects</a>
+      <a id="skills" class="nav-command">skills</a>
+    </nav>
+
+    <!-- Terminal Text -->
+    <div id="typed-text" class="typed-text"></div>
+  </div>
+
+  <!-- Typed.js script -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    // Store different command options in an object
+    const commands = {
+      whoami: "<span class='prompt'>$</span> whoami<br>Logeshwaran V - Back-End Developer<br><br>",
+      contact: "<span class='prompt'>$</span> cat contact.txt<br>" +
+                "Email: <a href='mailto:dev.logeshwaran@gmail.com'>dev.logeshwaran@gmail.com</a><br>" +
+                "Phone: 9361679431<br>" +
+                "Address: GajaLakshmi Street, Thirunagar, Panruti - 607106<br><br>",
+      education: "<span class='prompt'>$</span> cat education.txt<br>" +
+                  "Bachelor of Technology in Information Technology<br>" +
+                  "Kongunadu College of Engineering and Technology<br>" +
+                  "CGPA: 8.45<br><br>",
+      certifications: "<span class='prompt'>$</span> cat certifications.txt<br>" +
+                      "1. <a href='https://www.udemy.com/certificate/UC-aefef389-3591-4a93-a164-5ca92f119364/' target='_blank'>Automate the Boring Stuff with Python - Udemy</a><br>" +
+                      "2. <a href='https://www.guvi.in/certificate?id=u3T6A01U81yI5a8199' target='_blank'>Python Zero to Hero - Guvi</a><br>" +
+                      "3. <a href='https://codered.eccouncil.org/certificate/544150f7-eaf3-427f-8c12-8dda13a10e34?logged=false' target='_blank'>Intro to Dark Web and Cryptocurrency - EC-Council</a><br>" +
+                      "4. <a href='https://learn.mongodb.com/c/b98saggFQMiH72Zo5-xuvg' target='_blank'>MongoDB Basics - MongoDB</a><br>" +
+                      "5. <a href='https://www.hackerrank.com/certificates/159742ac8e87' target='_blank'>Python (Basic) - HackerRank</a><br><br>",
+      projects: "<span class='prompt'>$</span> cat projects.txt<br>" +
+                "1. <a href='https://github.com/Akash2king/Library_Management_System-Django/tree/master' target='_blank'>Library Management System</a><br>" +
+                "2. <a href='https://github.com/Akash2king/python-projects/tree/main/File%20organizor' target='_blank'>Automatic File Organizer</a><br>" +
+                "3. <a href='https://github.com/Akash2king/Streamlit-apps/blob/main/text_summarizer.py' target='_blank'>Text Summarizer</a><br>" +
+                "4. <a href='https://github.com/Akash2king/python-projects/blob/main/File_regex/text_data_extractor.py' target='_blank'>Data Extractor</a><br><br>",
+      skills: "<span class='prompt'>$</span> cat skills.txt<br>" +
+              "Programming: Python<br>" +
+              "Frameworks: Django, Flask, Bootstrap<br>" +
+              "Database: SQL, MongoDB<br>" +
+              "Tools: Git, VS Code, Figma, Canva"
+    };
+
+    // Function to trigger the typing effect
+    function triggerTypedEffect(command) {
+      // Stop the current typing if any
+      const typedElement = document.getElementById('typed-text');
+      typedElement.innerHTML = '';
+
+      // Start the new typing effect
+      new Typed('#typed-text', {
+        strings: [commands[command]],
+        typeSpeed: 40,
+        backSpeed: 0,
+        showCursor: true,
+        cursorChar: '|',
+        loop: false
+      });
+    }
+
+    // Add click events to the nav commands
+    document.querySelectorAll('.nav-command').forEach((element) => {
+      element.addEventListener('click', () => {
+        const command = element.id;  // Get the id of the clicked nav element (e.g. 'whoami', 'contact')
+        triggerTypedEffect(command);  // Call the function to trigger typing effect
+      });
+    });
+  </script>
+
+</body>
+</html>
