@@ -55,13 +55,27 @@
       margin-bottom: 20px;
     }
 
-    a {
-      color: #729fcf;
-      text-decoration: none;
+    button {
+      color: #00ffcb;
+      background-color: rgba(0, 255, 255, 0.1);
+      border: none;
+      font-size: 1.1em;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
-    a:hover {
-      text-decoration: underline;
+    button:hover {
+      color: #ffffff;
+      background-color: rgba(0, 255, 255, 0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    button:active {
+      transform: translateY(0);
+      box-shadow: none;
     }
 
     nav {
@@ -70,21 +84,6 @@
       flex-wrap: wrap;
       gap: 15px;
       margin-bottom: 30px;
-    }
-
-    nav a {
-      color: #00ffcb;
-      text-decoration: none;
-      font-size: 1.1em;
-      padding: 5px 10px;
-      border-radius: 4px;
-      background-color: rgba(0, 255, 255, 0.1);
-      transition: background-color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #ffffff;
-      background-color: rgba(0, 255, 255, 0.3);
     }
 
     @media (max-width: 600px) {
@@ -98,9 +97,9 @@
         margin-bottom: 15px;
       }
 
-      nav a {
+      button {
         font-size: 0.9em;
-        padding: 5px 8px;
+        padding: 8px;
       }
 
       .typed-text {
@@ -114,7 +113,7 @@
         align-items: center;
       }
 
-      nav a {
+      button {
         font-size: 0.85em;
         padding: 8px;
       }
@@ -132,12 +131,12 @@
     
     <!-- Navbar -->
     <nav>
-      <a id="whoami" class="nav-command">whoami</a>
-      <a id="contact" class="nav-command">contact</a>
-      <a id="education" class="nav-command">education</a>
-      <a id="certifications" class="nav-command">certifications</a>
-      <a id="projects" class="nav-command">projects</a>
-      <a id="skills" class="nav-command">skills</a>
+      <button id="whoami" class="nav-command">whoami</button>
+      <button id="contact" class="nav-command">contact</button>
+      <button id="education" class="nav-command">education</button>
+      <button id="certifications" class="nav-command">certifications</button>
+      <button id="projects" class="nav-command">projects</button>
+      <button id="skills" class="nav-command">skills</button>
     </nav>
 
     <!-- Terminal Text -->
@@ -149,42 +148,24 @@
   <script>
     // Store different command options in an object
     const commands = {
-      whoami: "<span class='prompt'>$</span> whoami<br>Logeshwaran V - Back-End Developer<br><br>",
-      contact: "<span class='prompt'>$</span> cat contact.txt<br>" +
-                "Email: <a href='mailto:dev.logeshwaran@gmail.com'>dev.logeshwaran@gmail.com</a><br>" +
-                "Phone: 9361679431<br>" +
-                "Address: GajaLakshmi Street, Thirunagar, Panruti - 607106<br><br>",
-      education: "<span class='prompt'>$</span> cat education.txt<br>" +
-                  "Bachelor of Technology in Information Technology<br>" +
-                  "Kongunadu College of Engineering and Technology<br>" +
-                  "CGPA: 8.45<br><br>",
-      certifications: "<span class='prompt'>$</span> cat certifications.txt<br>" +
-                      "1. <a href='https://www.udemy.com/certificate/UC-aefef389-3591-4a93-a164-5ca92f119364/' target='_blank'>Automate the Boring Stuff with Python - Udemy</a><br>" +
-                      "2. <a href='https://www.guvi.in/certificate?id=u3T6A01U81yI5a8199' target='_blank'>Python Zero to Hero - Guvi</a><br>" +
-                      "3. <a href='https://codered.eccouncil.org/certificate/544150f7-eaf3-427f-8c12-8dda13a10e34?logged=false' target='_blank'>Intro to Dark Web and Cryptocurrency - EC-Council</a><br>" +
-                      "4. <a href='https://learn.mongodb.com/c/b98saggFQMiH72Zo5-xuvg' target='_blank'>MongoDB Basics - MongoDB</a><br>" +
-                      "5. <a href='https://www.hackerrank.com/certificates/159742ac8e87' target='_blank'>Python (Basic) - HackerRank</a><br><br>",
-      projects: "<span class='prompt'>$</span> cat projects.txt<br>" +
-                "1. <a href='https://github.com/Akash2king/Library_Management_System-Django/tree/master' target='_blank'>Library Management System</a><br>" +
-                "2. <a href='https://github.com/Akash2king/python-projects/tree/main/File%20organizor' target='_blank'>Automatic File Organizer</a><br>" +
-                "3. <a href='https://github.com/Akash2king/Streamlit-apps/blob/main/text_summarizer.py' target='_blank'>Text Summarizer</a><br>" +
-                "4. <a href='https://github.com/Akash2king/python-projects/blob/main/File_regex/text_data_extractor.py' target='_blank'>Data Extractor</a><br><br>",
-      skills: "<span class='prompt'>$</span> cat skills.txt<br>" +
-              "Programming: Python<br>" +
-              "Frameworks: Django, Flask, Bootstrap<br>" +
-              "Database: SQL, MongoDB<br>" +
-              "Tools: Git, VS Code, Figma, Canva"
+      whoami: "<span class='prompt'>$</span> whoami\nLogeshwaran V - Back-End Developer\n\n",
+      contact: "<span class='prompt'>$</span> cat contact.txt\nEmail: dev.logeshwaran@gmail.com\nPhone: 9361679431\nAddress: GajaLakshmi Street, Thirunagar, Panruti - 607106\n\n",
+      education: "<span class='prompt'>$</span> cat education.txt\nBachelor of Technology in Information Technology\nKongunadu College of Engineering and Technology\nCGPA: 8.45\n\n",
+      certifications: "<span class='prompt'>$</span> cat certifications.txt\n1. Automate the Boring Stuff with Python - Udemy\n2. Python Zero to Hero - Guvi\n3. Intro to Dark Web and Cryptocurrency - EC-Council\n4. MongoDB Basics - MongoDB\n5. Python (Basic) - HackerRank\n\n",
+      projects: "<span class='prompt'>$</span> cat projects.txt\n1. Library Management System\n2. Automatic File Organizer\n3. Text Summarizer\n4. Data Extractor\n\n",
+      skills: "<span class='prompt'>$</span> cat skills.txt\nProgramming: Python\nFrameworks: Django, Flask, Bootstrap\nDatabase: SQL, MongoDB\nTools: Git, VS Code, Figma, Canva\n\n"
     };
 
     // Function to trigger the typing effect
     function triggerTypedEffect(command) {
-      // Stop the current typing if any
       const typedElement = document.getElementById('typed-text');
-      typedElement.innerHTML = '';
+      typedElement.innerHTML = ''; // Clear the previous text
 
-      // Start the new typing effect
+      // Replace <br> with newline (\n) for display
+      const commandText = commands[command].replace(/<br>/g, '\n');
+
       new Typed('#typed-text', {
-        strings: [commands[command]],
+        strings: [commandText],
         typeSpeed: 5,
         backSpeed: 0,
         showCursor: true,
