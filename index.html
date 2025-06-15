@@ -1,187 +1,898 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Logeshwaran V - Back-End Developer</title>
-  <style>
-    body {
-      font-family: 'Courier New', monospace;
-      background: linear-gradient(270deg, #ff0080, #ff8c00, #40e0d0, #8a2be2);
-      background-size: 800% 800%;
-      animation: gradientAnimation 15s ease infinite;
-      color: #ffffff;
-      line-height: 1.6;
-      padding: 0;
-      margin: 0;
-      scroll-behavior: smooth;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logeshwaran V - Back-End Developer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    @keyframes gradientAnimation {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(270deg, #0f0f23, #1a1a2e, #16213e, #0f0f23);
+            background-size: 800% 800%;
+            animation: gradientAnimation 15s ease infinite;
+            color: #00ff41;
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
-    .container {
-      max-width: 1000px;
-      margin: 100px auto;
-      padding: 20px;
-      background-color: #2c001e;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      position: relative;
-      color: #ffffff;
-    }
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-    .typed-text {
-      font-size: 1.2em;
-      white-space: pre-wrap;
-      color: #00ff00;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
-    .prompt {
-      color: #4e9a06;
-    }
+        .terminal-header {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px 10px 0 0;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            border: 1px solid #00ff41;
+            border-bottom: none;
+        }
 
-    .command {
-      color: #729fcf;
-    }
+        .terminal-buttons {
+            display: flex;
+            gap: 10px;
+        }
 
-    h1 {
-      font-size: 2.5em;
-      text-align: center;
-      color: #00ffcb;
-      margin-bottom: 20px;
-    }
+        .terminal-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ff5f56;
+        }
 
-    button {
-      color: #00ffcb;
-      background-color: rgba(0, 255, 255, 0.1);
-      border: none;
-      font-size: 1.1em;
-      padding: 8px 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
+        .terminal-button:nth-child(2) {
+            background: #ffbd2e;
+        }
 
-    button:hover {
-      color: #ffffff;
-      background-color: rgba(0, 255, 255, 0.3);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
+        .terminal-button:nth-child(3) {
+            background: #27ca3f;
+        }
 
-    button:active {
-      transform: translateY(0);
-      box-shadow: none;
-    }
+        .terminal-title {
+            margin-left: 20px;
+            color: #00ff41;
+            font-size: 14px;
+        }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-bottom: 30px;
-    }
+        .terminal-body {
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid #00ff41;
+            border-top: none;
+            border-radius: 0 0 10px 10px;
+            padding: 30px;
+            flex: 1;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
+        }
 
-    @media (max-width: 600px) {
-      .container {
-        margin: 50px 20px;
-        padding: 15px;
-      }
+        .ascii-art {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #00ffcb;
+            font-size: 12px;
+            line-height: 1.2;
+        }
 
-      h1 {
-        font-size: 1.8em;
-        margin-bottom: 15px;
-      }
+        .nav-commands {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+            padding: 20px 0;
+        }
 
-      button {
-        font-size: 0.9em;
-        padding: 8px;
-      }
+        .nav-command {
+            background: rgba(0, 255, 65, 0.1);
+            border: 1px solid #00ff41;
+            color: #00ff41;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
 
-      .typed-text {
-        font-size: 1em;
-      }
-    }
+        .nav-command::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.2), transparent);
+            transition: left 0.5s;
+        }
 
-    @media (max-width: 400px) {
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
+        .nav-command:hover::before {
+            left: 100%;
+        }
 
-      button {
-        font-size: 0.85em;
-        padding: 8px;
-      }
+        .nav-command:hover {
+            background: rgba(0, 255, 65, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 65, 0.3);
+        }
 
-      h1 {
-        font-size: 1.5em;
-      }
-    }
-  </style>
+        .nav-command:active {
+            transform: translateY(0);
+        }
+
+        .output-area {
+            min-height: 400px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            padding: 20px;
+            border: 1px solid rgba(0, 255, 65, 0.3);
+        }
+
+        .typed-text {
+            color: #00ff41;
+            white-space: pre-wrap;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .prompt {
+            color: #00ffcb;
+            text-shadow: 0 0 5px #00ffcb;
+        }
+
+        .command {
+            color: #ffa500;
+            text-shadow: 0 0 5px #ffa500;
+        }
+
+        .highlight {
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+
+        .success {
+            color: #51cf66;
+        }
+
+        .info {
+            color: #74c0fc;
+        }
+
+        .cursor {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .skill-bar {
+            margin: 10px 0;
+        }
+
+        .skill-name {
+            color: #00ffcb;
+            margin-bottom: 5px;
+        }
+
+        .skill-progress {
+            background: rgba(0, 255, 65, 0.2);
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            border: 1px solid #00ff41;
+        }
+
+        .skill-fill {
+            background: linear-gradient(90deg, #00ff41, #00ffcb);
+            height: 100%;
+            border-radius: 5px;
+            animation: fillSkill 2s ease-out;
+        }
+
+        @keyframes fillSkill {
+            from { width: 0; }
+        }
+
+        .project-card {
+            background: rgba(0, 255, 65, 0.1);
+            border: 1px solid #00ff41;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            background: rgba(0, 255, 65, 0.2);
+            transform: translateX(10px);
+        }
+
+        .project-title {
+            color: #00ffcb;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid rgba(0, 255, 65, 0.3);
+            color: #00ff41;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .social-link {
+            color: #00ff41;
+            font-size: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: #00ffcb;
+            transform: scale(1.2);
+            text-shadow: 0 0 10px #00ffcb;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .terminal-body {
+                padding: 20px;
+            }
+            
+            .nav-commands {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .ascii-art {
+                font-size: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-commands {
+                grid-template-columns: 1fr;
+            }
+            
+            .terminal-title {
+                font-size: 12px;
+                margin-left: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <div class="terminal-button"></div>
+                <div class="terminal-button"></div>
+                <div class="terminal-button"></div>
+            </div>
+            <div class="terminal-title">logeshwaran@portfolio:~$</div>
+        </div>
+        
+        <div class="terminal-body">
+            <div class="ascii-art">
+                <pre>
+╔════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                                ║
+║ ██╗      ██████╗  ██████╗ ███████╗███████╗██╗  ██╗██╗    ██╗ █████╗ ██████╗  █████╗ ███╗   ██╗ ║
+║ ██║     ██╔═══██╗██╔════╝ ██╔════╝██╔════╝██║  ██║██║    ██║██╔══██╗██╔══██╗██╔══██╗████╗  ██║ ║
+║ ██║     ██║   ██║██║  ███╗█████╗  ███████╗███████║██║ █╗ ██║███████║██████╔╝███████║██╔██╗ ██║ ║
+║ ██║     ██║   ██║██║   ██║██╔══╝  ╚════██║██╔══██║██║███╗██║██╔══██║██╔══██╗██╔══██║██║╚██╗██║ ║
+║ ███████╗╚██████╔╝╚██████╔╝███████╗███████║██║  ██║╚███╔███╔╝██║  ██║██║  ██║██║  ██║██║ ╚████║ ║
+║ ╚══════╝ ╚═════╝  ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ║
+║                                                                                                ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════╝
+                        BACK-END DEVELOPER | CYBERSECURITY ENTHUSIAST
+                </pre>
+            </div>
 
-  <div class="container">
-    <h1>Logeshwaran V's Portfolio</h1>
-    
-    <!-- Navbar -->
-    <nav>
-      <button id="whoami" class="nav-command">whoami</button>
-      <button id="contact" class="nav-command">contact</button>
-      <button id="education" class="nav-command">education</button>
-      <button id="certifications" class="nav-command">certifications</button>
-      <button id="projects" class="nav-command">projects</button>
-      <button id="skills" class="nav-command">skills</button>
-    </nav>
+            <div class="nav-commands">
+                <button class="nav-command" data-command="whoami">
+                    <i class="fas fa-user"></i> whoami
+                </button>
+                <button class="nav-command" data-command="contact">
+                    <i class="fas fa-envelope"></i> contact
+                </button>
+                <button class="nav-command" data-command="education">
+                    <i class="fas fa-graduation-cap"></i> education
+                </button>
+                <button class="nav-command" data-command="experience">
+                    <i class="fas fa-briefcase"></i> experience
+                </button>
+                <button class="nav-command" data-command="skills">
+                    <i class="fas fa-code"></i> skills
+                </button>
+                <button class="nav-command" data-command="projects">
+                    <i class="fas fa-folder-open"></i> projects
+                </button>
+                <button class="nav-command" data-command="certifications">
+                    <i class="fas fa-certificate"></i> certifications
+                </button>
+                <button class="nav-command" data-command="achievements">
+                    <i class="fas fa-trophy"></i> achievements
+                </button>
+                <button class="nav-command" data-command="activities">
+                    <i class="fas fa-users"></i> activities
+                </button>
+                <button class="nav-command" data-command="hobbies">
+                    <i class="fas fa-heart"></i> hobbies
+                </button>
+                <button class="nav-command" data-command="social">
+                    <i class="fas fa-share-alt"></i> social
+                </button>
+                <button class="nav-command" data-command="help">
+                    <i class="fas fa-question-circle"></i> help
+                </button>
+                <button class="nav-command" data-command="clear">
+                    <i class="fas fa-eraser"></i> clear
+                </button>
+            </div>
 
-    <!-- Terminal Text -->
-    <div id="typed-text" class="typed-text"></div>
-  </div>
+            <div class="output-area">
+                <div id="typed-output" class="typed-text"></div>
+                <span class="cursor">▊</span>
+            </div>
+        </div>
 
-  <!-- Typed.js script -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script>
-    // Store different command options in an object
-    const commands = {
-      whoami: "<span class='prompt'>$</span> whoami\nLogeshwaran V - Back-End Developer\n\n",
-      contact: "<span class='prompt'>$</span> cat contact.txt\nEmail: dev.logeshwaran@gmail.com\nPhone: 9361679431\nAddress: GajaLakshmi Street, Thirunagar, Panruti - 607106\n\n",
-      education: "<span class='prompt'>$</span> cat education.txt\nBachelor of Technology in Information Technology\nKongunadu College of Engineering and Technology\nCGPA: 8.45\n\n",
-      certifications: "<span class='prompt'>$</span> cat certifications.txt\n1. Automate the Boring Stuff with Python - Udemy\n2. Python Zero to Hero - Guvi\n3. Intro to Dark Web and Cryptocurrency - EC-Council\n4. MongoDB Basics - MongoDB\n5. Python (Basic) - HackerRank\n6. Rest API (Intermediate) - HackerRank\n",
-      projects: "<span class='prompt'>$</span> cat projects.txt\n1. Library Management System\n2. Automatic File Organizer\n3. Text Summarizer\n4. Data Extractor\n\n",
-      skills: "<span class='prompt'>$</span> cat skills.txt\nProgramming: Python\nFrameworks: Django, Flask, Bootstrap\nDatabase: SQL, MongoDB\nTools: Git, VS Code, Figma, Canva\n\n"
-    };
+        <div class="footer">
+            <div class="social-links">
+                <a href="https://linkedin.com/in/logeshwaran-v" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/Akash2king" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://hackerrank.com/Logeshwaran" class="social-link" target="_blank">
+                    <i class="fab fa-hackerrank"></i>
+                </a>
+                <a href="mailto:dev.logeshwaran@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p>&copy; 2025 Logeshwaran V. All rights reserved.</p>
+        </div>
+    </div>
 
-    // Function to trigger the typing effect
-    function triggerTypedEffect(command) {
-      const typedElement = document.getElementById('typed-text');
-      typedElement.innerHTML = ''; // Clear the previous text
+    <script>
+        const commands = {
+            whoami: `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">whoami</span>
 
-      // Replace <br> with newline (\n) for display
-      const commandText = commands[command].replace(/<br>/g, '\n');
+<span class="highlight">╔═══════════════════════════════════════╗</span>
+<span class="highlight">║           LOGESHWARAN V               ║</span>
+<span class="highlight">║        Back-End Developer             ║</span>
+<span class="highlight">║     Cybersecurity Enthusiast         ║</span>
+<span class="highlight">╚═══════════════════════════════════════╝</span>
 
-      new Typed('#typed-text', {
-        strings: [commandText],
-        typeSpeed: 5,
-        backSpeed: 0,
-        showCursor: true,
-        cursorChar: '',
-        loop: false
-      });
-    }
+<span class="info">Name:</span> Logeshwaran V
+<span class="info">Role:</span> Software Engineer & Back-End Developer
+<span class="info">Specialization:</span> Python Development, Web Security
+<span class="info">Current Focus:</span> Django/Flask Development, API Design
+<span class="info">Passion:</span> Building secure, scalable web applications
 
-    // Add click events to the nav commands
-    document.querySelectorAll('.nav-command').forEach((element) => {
-      element.addEventListener('click', () => {
-        const command = element.id;  // Get the id of the clicked nav element (e.g. 'whoami', 'contact')
-        triggerTypedEffect(command);  // Call the function to trigger typing effect
-      });
-    });
-  </script>
+<span class="success">✓ Lifelong learner driven by passion for technology</span>
+<span class="success">✓ Focused on real-world impact through innovative solutions</span>
+<span class="success">✓ Committed to continuous growth and professional development</span>
 
+<span class="info">Status:</span> <span class="success">Available for opportunities</span>
+`,
+
+            contact: `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">cat contact.txt</span>
+
+<span class="highlight">╔═══════════════════════════════════════╗</span>
+<span class="highlight">║            CONTACT INFO               ║</span>
+<span class="highlight">╚═══════════════════════════════════════╝</span>
+
+<span class="info">📧 Email:</span> dev.logeshwaran@gmail.com
+<span class="info">📱 Phone:</span> +91 9361679431
+<span class="info">🌐 Portfolio:</span> http://adaptxtech.me/Portfolio/
+<span class="info">📍 Address:</span> GajaLakshmi Street, Thirunagar
+                 Panruti - 607106, Tamil Nadu, India
+
+<span class="info">🔗 Professional Links:</span>
+├── LinkedIn: linkedin.com/in/logeshwaran-v
+├── GitHub: github.com/Akash2king
+├── HackerRank: hackerrank.com/Logeshwaran
+└── Email: dev.logeshwaran@gmail.com
+
+<span class="success">💬 Feel free to reach out for collaborations or opportunities!</span>
+`,
+
+            education: `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">cat education.txt</span>
+
+<span class="highlight">╔═══════════════════════════════════════╗</span>
+<span class="highlight">║            EDUCATION                  ║</span>
+<span class="highlight">╚═══════════════════════════════════════╝</span>
+
+<span class="info">🎓 Bachelor of Technology in Information Technology</span>
+   Institution: Kongunadu College of Engineering and Technology
+   Duration: 2022 - 2026
+   CGPA: <span class="success">8.45 / 10</span>
+   
+   <span class="info">Key Subjects:</span>
+   ├── Data Structures & Algorithms
+   ├── Database Management Systems
+   ├── Web Technologies
+   ├── Network Security
+   ├── Software Engineering
+   └── Machine Learning
+
+<span class="info">🏫 Higher Secondary Education</span>
+   Institution: Rathna Metric HR Sec School
+   Duration: 2020 - 2022
+   HSC: <span class="success">84.6%</span>
+   SSLC: <span class="success">96%</span>
+   
+   <span class="info">Focus:</span> Computer Science & Mathematics
+
+<span class="success">✓ Consistent academic excellence with strong foundation in CS</span>
+`,
+
+            experience: `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">cat experience.txt</span>
+
+<span class="highlight">╔═══════════════════════════════════════╗</span>
+<span class="highlight">║           EXPERIENCE                  ║</span>
+<span class="highlight">╚═══════════════════════════════════════╝</span>
+
+<span class="info">💼 Software Engineer | Way2Skills</span>
+   Duration: 2025 - Present
+   
+   <span class="info">Responsibilities:</span>
+   ├── Development and implementation of comprehensive solutions
+   ├── Delivering exceptional user experience through modern tech
+   ├── Backend development using Python and Django
+   ├── API design and database optimization
+   └── Code review and mentoring junior developers
+   
+   <span class="success">✓ Key contributor to product development lifecycle</span>
+
+<span class="info">🌐 Web Developer | Cloud Logic</span>
+   Duration: April 2024
+   
+   <span class="info">Achievements:</span>
+   ├── Developed comprehensive web solutions
+   ├── Implemented cutting-edge web technologies
+   ├── Focused on responsive design and user experience
+   ├── Collaborated with cross-functional teams
+   └── Delivered projects within tight deadlines
+   
+   <span class="success">✓ Successfully delivered multiple client projects</span>
+
+<span class="info">📈 Skills Developed:</span>
+• Full-stack web development
+• Team collaboration and communication
+• Project management and client interaction
+• Problem-solving and debugging
+`,
+
+            skills: `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">cat skills.txt</span>
+
+<span class="highlight">╔═══════════════════════════════════════╗</span>
+<span class="highlight">║              SKILLS                   ║</span>
+<span class="highlight">╚═══════════════════════════════════════╝</span>
+
+<span class="info">🐍 Programming Languages:</span>
+├── Python ████████████████████ 95%
+├── JavaScript ███████████████░░░ 75%
+├── HTML/CSS ██████████████████░░ 90%
+└── SQL ████████████████░░░░░░ 80%
+
+<span class="info">🚀 Frameworks & Libraries:</span>
+├── Django ██████████████████░░ 90%
+├── Flask ████████████████░░░░ 80%
+├── Bootstrap █████████████████░░ 85%
+└── Tailwind CSS ███████████████░░ 75%
+
+<span class="info">🛢️ Databases:</span>
+├── MongoDB ████████████████░░░░ 80%
+├── PostgreSQL ██████████████░░░░ 70%
+├── MySQL ███████████████░░░░░ 75%
+└── SQLite ████████████████████ 95%
+
+<span class="info">🔧 Tools & Technologies:</span>
+├── Git/GitHub █████████████████░░ 85%
+├── VS Code ████████████████████ 95%
+├── Linux ██████████████░░░░░░ 70%
+└── Docker ████████████░░░░░░░ 60%
+
+<span class="info">🔒 Security Tools:</span>
+├── Burp Suite ████████████████░░░ 80%
+├── Wireshark ██████████████░░░░ 70%
+├── OWASP ████████████░░░░░░░ 60%
+└── Penetration Testing ███████░░░░░ 65%
+
+<span class="info">🎨 Design & Others:</span>
+├── Figma ██████████████░░░░░░ 70%
+├── Canva ███████████████████░░ 85%
+└── API Development ████████████████░░░ 80%
+
+<span class="success">💡 Always learning new technologies and improving existing skills!</span>
+`,
+
+            projects: `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">ls -la projects/</span>
+
+<span class="highlight">╔═══════════════════════════════════════╗</span>
+<span class="highlight">║             PROJECTS                  ║</span>
+<span class="highlight">╚═══════════════════════════════════════╝</span>
+
+<span class="info">📁 PROJECT 1: Collaborative Code Editor</span>
+   <span class="info">Description:</span> Real-time collaborative coding platform
+   <span class="info">Technologies:</span> Python (Django), Django Channels, HTML, Bootstrap, 
+                  Pandas, ACE Library
+   <span class="info">Features:</span>
+   ├── Real-time code synchronization with zero latency
+   ├── Multi-user collaboration support
+   ├── Syntax highlighting for multiple languages
+   ├── Live chat and communication features
+   └── Code execution and sharing capabilities
+   
+   <span class="success">✓ Seamless developer collaboration experience</span>
+
+<span class="info">📁 PROJECT 2: Library Management System</span>
+   <span class="info">Description:</span> Digital library resource management platform
+   <span class="info">Technologies:</span> Python (Django), HTML, Bootstrap, SQLite
+   <span class="info">Features:</span>
+   ├── Complete CRUD operations for books and users
+   ├── Advanced search and filtering system
+   ├── User authentication and authorization
+   ├── Book reservation and return tracking
+   ├── Admin dashboard with analytics
+   └── Responsive design for all devices
+   
+   <span class="success">✓ Streamlined library resource management</span>
+
+<span class="info">📁 PROJECT 3: Automatic File Organizer</span>
+   <span class="info">Description:</span> Smart file organization system
+   <span class="info">Technologies:</span> Python, OS Module, File Handling
+   <span class="info">Features:</span>
+   ├── Automated file sorting by type and date
+   ├── Customizable organization rules
+   ├── Batch processing capabilities
+   └── Cross-platform compatibility
+   
+<span class="info">📁 PROJECT 4: Text Summarizer</span>
+   <span class="info">Description:</span> AI-powered text summarization tool
+   <span class="info">Technologies:</span> Python, NLP Libraries, Flask
+   <span class="info">Features:</span>
+   ├── Intelligent text analysis and summarization
+   ├── Multiple summarization algorithms
+   ├── Web-based interface
+   └── Support for various document formats
+
+<span class="success">🚀 All projects available on GitHub with detailed documentation</span>
+`,
+
+            certifications: `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">cat certifications.txt</span>
+
+<span class="highlight">╔═══════════════════════════════════════╗</span>
+<span class="highlight">║          CERTIFICATIONS               ║</span>
+<span class="highlight">╚═══════════════════════════════════════╝</span>
+
+<span class="info">🏆 Programming & Development:</span>
+├── 🐍 Automate the Boring Stuff with Python - Udemy
+├── 🐍 Python Zero to Hero - Guvi
+├── 🐍 Python (Basic) - HackerRank
+└── 🌐 REST API (Intermediate) - HackerRank
+
+<span class="info">🔒 Cybersecurity & Networking:</span>
+├── 🌐 Introduction to Dark Web, Anonymity, and Cryptocurrency - EC-Council
+├── 🛡️ Web Application Security Fundamentals
+└── 🔍 Network Security and Penetration Testing
+
+<span class="info">🛢️ Database & Backend:</span>
+├── 📊 MongoDB Basics - ICT Academy Learnathon - MongoDB
+├── 🗃️ Database Design and Management
+└── ⚡ Backend Development with Python
+
+<span class="info">📈 Additional Skills:</span>
+├── 📊 Data Analysis with Python
+├── 🎯 Project Management Fundamentals
+├── 💻 Web Development Best Practices
+└── 🔧 DevOps and Cloud Computing Basics
+
+<span class="success">📜 Total Certifications: 12+</span>
+<span class="success">🎯 Continuously pursuing new certifications to stay updated</span>
+
+<span class="info">🔄 Currently Working On:</span>
+├── AWS Cloud Practitioner
+├── Certified Ethical Hacker (CEH)
+└── Advanced Django Development
+`,
+
+            achievements: `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">cat achievements.txt</span>
+
+<span class="highlight">╔═══════════════════════════════════════╗</span>
+<span class="highlight">║           ACHIEVEMENTS                ║</span>
+<span class="highlight">╚═══════════════════════════════════════╝</span>
+
+<span class="info">🏆 Hackathon Victories:</span>
+
+<span class="success">🥇 1st Place</span> - 0X.Day Hackathon
+   Location: Manakula Vinayagar College of Engineering, Pondicherry
+   Year: III Year
+   Achievement: Outstanding innovation in cybersecurity solution
+
+<span class="success">🥈 2nd Place</span> - Annasaheb Dange College of Engineering
+   Location: Maharashtra
+   Year: III Year
+   Achievement: Exceptional web application development
+
+<span class="success">🥉 3rd Place</span> - IT Department Hackathon
+   Location: Kongunadu College of Engineering and Technology
+   Year: II Year
+   Achievement: Best technical implementation
+
+<span class="success">🥈 2nd Place</span> - BME Department Hackathon
+   Location: Kongunadu College of Engineering and Technology
+   Year: II Year
+   Achievement: Innovative biomedical engineering solution
+
+<span class="info">🌟 Major Hackathon Participations:</span>
+├── 🏛️ IISF Hackathon - IIT Guwahati, Assam
+├── 🏢 Aurigo Company Hackathon - Bangalore
+├── 🌍 Multiple State-level Hackathons (MP, Hyderabad, TN)
+└── 🏆 Various National-level Competitions
+
+<span class="info">🎯 Academic Excellence:</span>
+├── 📚 CGPA: 8.45/10 (Current)
+├── 🎓 96% in SSLC Examinations
+├── 📖 84.6% in HSC Examinations
+└── 🏅 Consistent academic performance
+
+<span class="info">🌐 Community Recognition:</span>
+├── 👥 Active NSS Member
+├── 🎬 Multimedia Club Member
+├── 🇮🇳 Tamil Mandram Active Participant
+└── 📊 Event Organization and Management
+
+<span class="success">💡 "It does not matter how slowly you go as long as you do not stop."</span>
+`,
+
+            activities: `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">cat activities.txt</span>
+
+<span class="highlight">╔═══════════════════════════════════════╗</span>
+<span class="highlight">║      ACTIVITIES & INTERESTS          ║</span>
+<span class="highlight">╚═══════════════════════════════════════╝</span>
+
+<span class="info">🎯 Extra-Curricular Activities:</span>
+├── 🤝 National Service Scheme (NSS) - Active Member
+├── 🎬 Video Editing and Content Creation
+├── 📅 Event Organization and Management
+├── 🎪 College Fest Coordination
+└── 🎤 Technical Workshop Coordination
+
+<span class="info">📚 Co-Curricular Activities:</span>
+├── 💻 Hackathon Participation and Organization
+├── 📊 Technical Paper Presentations
+├── 🔬 Research Project Mentoring
+├── 👥 Peer Tutoring and Study Groups
+└── 🌐 Open Source Contributions
+
+<span class="info">🎨 Community Involvement:</span>
+├── 🏫 College Technical Events Volunteer
+├── 👨‍🏫 Mentoring Junior Students
+├── 🔧 Open Source Project Contributions
+├── 📝 Technical Blog Writing
+└── 💬 Tech Community Discussions
+
+<span class="info">🎯 Leadership Roles:</span>
+├── 📊 Team Lead in Multiple Hackathons
+├── 🎪 Event Coordinator for Technical Fests
+├── 👥 Study Group Facilitator
+└── 🎬 Multimedia Club Project Manager
+
+<span class="success">🌟 Always eager to learn, contribute, and make a positive impact!</span>
+`,
+
+            hobbies: `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">cat hobbies.txt</span>
+
+<span class="highlight">╔═══════════════════════════════════════╗</span>
+<span class="highlight">║        HOBBIES & INTERESTS            ║</span>
+<span class="highlight">╚═══════════════════════════════════════╝</span>
+
+<span class="info">📚 Intellectual Pursuits:</span>
+├── 📖 Reading Books (Technical & Non-fiction)
+├── 🔍 Exploring New Technologies
+├── ✍️ Journaling and Technical Writing
+└── 🧠 Problem Solving and Logical Thinking
+
+<span class="info">💻 Technical Hobbies:</span>
+├── 🎮 Coding Challenges and Competitive Programming
+├── 🌱 Learning New Programming Languages
+├── 🔧 Open Source Project Contributions
+└── 🛠️ Building Personal Projects
+
+<span class="info">🎨 Creative Activities:</span>
+├── 🎬 Video Editing and Content Creation
+├── 🎵 Music and Creative Arts
+├── 📸 Photography and Visual Design
+└── 🎭 Multimedia Content Development
+
+<span class="info">🌐 Community Engagement:</span>
+├── 📝 Technical Blog Writing
+├── 💬 Tech Community Discussions
+├── 👨‍🏫 Mentoring and Teaching
+└── 🎤 Public Speaking and Presentations
+
+<span class="success">🎯 Passionate about continuous learning and sharing knowledge!</span>
+`,
+
+            social: `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">cat social_links.txt</span>
+
+<span class="highlight">╔═══════════════════════════════════════╗</span>
+<span class="highlight">║           SOCIAL LINKS                ║</span>
+<span class="highlight">╚═══════════════════════════════════════╝</span>
+
+<span class="info">💼 Professional Networks:</span>
+├── 🔗 LinkedIn: linkedin.com/in/logeshwaran-v
+│   └── Connect for professional opportunities
+├── 💻 GitHub: github.com/Akash2king
+│   └── Explore my code repositories and projects
+├── 🏆 HackerRank: hackerrank.com/Logeshwaran
+│   └── View my coding challenges and rankings
+└── 📧 Email: dev.logeshwaran@gmail.com
+    └── Direct professional communication
+
+<span class="info">🌐 Online Presence:</span>
+├── 🖥️ Portfolio: http://adaptxtech.me/Portfolio/
+├── 📝 Technical Blog: [Coming Soon]
+├── 🎥 YouTube: [Tech Tutorials - Coming Soon]
+└── 🐦 Twitter: [Tech Updates - Coming Soon]
+
+<span class="info">📊 Coding Profiles:</span>
+├── 💻 LeetCode: [Active Problem Solver]
+├── 🎯 CodeChef: [Competitive Programming]
+├── 🔥 Codeforces: [Algorithm Challenges]
+└── 📈 GeeksforGeeks: [Interview Preparation]
+
+<span class="info">🤝 Community Engagement:</span>
+├── 💬 Stack Overflow: [Helping Developers]
+├── 🌟 Open Source: [Contributing to Projects]
+├── 🎪 Tech Events: [Speaker & Participant]
+└── 👥 Discord: [Tech Community Member]
+
+<span class="success">🔔 Follow me for:</span>
+• Latest project updates
+• Technology insights and tutorials
+• Hackathon experiences and learnings
+• Career journey and tips
+
+<span class="info">📱 Let's connect and build amazing things together!</span>
+`,
+
+            help: `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">help</span>
+
+<span class="highlight">╔═══════════════════════════════════════╗</span>
+<span class="highlight">║         AVAILABLE COMMANDS            ║</span>
+<span class="highlight">╚═══════════════════════════════════════╝</span>
+
+<span class="info">📋 Navigation Commands:</span>
+├── <span class="command">whoami</span>         - Display personal information
+├── <span class="command">contact</span>        - Show contact details
+├── <span class="command">education</span>      - View educational background
+├── <span class="command">experience</span>     - Display work experience
+├── <span class="command">skills</span>         - Show technical skills
+├── <span class="command">projects</span>       - List project portfolio
+├── <span class="command">certifications</span> - View certifications
+├── <span class="command">achievements</span>   - Display awards and recognition
+├── <span class="command">activities</span>     - Show extra-curricular activities
+├── <span class="command">hobbies</span>        - View personal interests
+└── <span class="command">social</span>         - Display social media links
+
+<span class="info">🔧 Utility Commands:</span>
+├── <span class="command">help</span>           - Show this help menu
+├── <span class="command">clear</span>          - Clear the terminal output
+└── <span class="command">exit</span>           - Close terminal (use Ctrl+C)
+
+<span class="info">💡 Tips:</span>
+• Click any command button to execute
+• Use keyboard shortcuts for faster navigation
+• All content is dynamically loaded
+• Responsive design works on all devices
+
+<span class="success">🚀 Welcome to my interactive terminal portfolio!</span>
+<span class="info">Type any command to explore my professional journey.</span>
+`,
+
+            clear: ""
+        };
+
+        function executeCommand(command) {
+            const output = document.getElementById('typed-output');
+            
+            if (command === 'clear') {
+                output.innerHTML = '';
+                return;
+            }
+            
+            const commandText = commands[command] || `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">${command}</span>\n\n<span class="highlight">Command not found.</span> Type '<span class="command">help</span>' for available commands.\n\n`;
+            
+            // Display content immediately (static)
+            output.innerHTML = commandText;
+            
+            // Add skill bar animations if skills command
+            if (command === 'skills') {
+                animateSkillBars();
+            }
+        }
+
+        function animateSkillBars() {
+            // This would be implemented if we had actual skill bars in the output
+            // For now, the animation is handled by CSS
+        }
+
+        // Add event listeners to command buttons
+        document.querySelectorAll('.nav-command').forEach(button => {
+            button.addEventListener('click', () => {
+                const command = button.getAttribute('data-command');
+                executeCommand(command);
+            });
+        });
+
+        // Add keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey) {
+                switch(e.key) {
+                    case 'l':
+                        e.preventDefault();
+                        executeCommand('clear');
+                        break;
+                    case 'h':
+                        e.preventDefault();
+                        executeCommand('help');
+                        break;
+                }
+            }
+        });
+
+        // Initialize with welcome message
+        window.addEventListener('load', () => {
+            executeCommand('help');
+        });
+
+        // Add some interactive effects
+        document.querySelectorAll('.nav-command').forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                button.style.transform = 'translateY(-2px) scale(1.05)';
+            });
+            
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
 </body>
 </html>
