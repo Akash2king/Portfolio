@@ -1,0 +1,68 @@
+{
+  "name": "akash2king-cyberpunk-portfolio",
+  "version": "2.0.0",
+  "description": "A cyberpunk-themed terminal portfolio showcasing Azure cloud engineering, cybersecurity, and backend development expertise",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "serve": "npx serve .",
+    "deploy": "gh-pages -d .",
+    "lint": "htmlhint index.html && eslint --ext .js .",
+    "validate": "html-validate index.html",
+    "optimize": "imagemin '**/*.{jpg,png,svg}' --out-dir=dist",
+    "audit": "lighthouse http://localhost:8000 --output=html --output-path=./lighthouse-report.html"
+  },
+  "keywords": [
+    "portfolio",
+    "cyberpunk",
+    "terminal",
+    "azure",
+    "cybersecurity",
+    "backend",
+    "cloud-engineer",
+    "developer",
+    "interactive",
+    "responsive"
+  ],
+  "author": {
+    "name": "Akash2king",
+    "email": "akash2king@cybersec.dev",
+    "url": "https://akash2king.github.io/Portfolio/"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Akash2king/Portfolio.git"
+  },
+  "homepage": "https://akash2king.github.io/Portfolio/",
+  "bugs": {
+    "url": "https://github.com/Akash2king/Portfolio/issues"
+  },
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "htmlhint": "^1.1.4",
+    "html-validate": "^7.15.0",
+    "lighthouse": "^10.4.0",
+    "imagemin": "^8.0.1",
+    "imagemin-cli": "^7.0.0",
+    "gh-pages": "^6.0.0",
+    "serve": "^14.2.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "files": [
+    "index.html",
+    "README.md",
+    "LICENSE"
+  ],
+  "directories": {
+    "doc": "docs"
+  }
+}
