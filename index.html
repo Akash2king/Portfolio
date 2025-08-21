@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logeshwaran V - Back-End Developer</title>
+    <title>Logeshwaran V - Azure Cloud & Cybersecurity Specialist</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -22,6 +22,38 @@
             line-height: 1.6;
             min-height: 100vh;
             overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Matrix-style background effect */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #00ff41, transparent),
+                radial-gradient(2px 2px at 40px 70px, #00ffcb, transparent),
+                radial-gradient(1px 1px at 90px 40px, #ff006e, transparent),
+                radial-gradient(1px 1px at 130px 80px, #00ff41, transparent),
+                radial-gradient(2px 2px at 160px 30px, #00ffcb, transparent);
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            animation: matrixRain 20s linear infinite, matrixGlow 3s ease-in-out infinite alternate;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        @keyframes matrixRain {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 200px; }
+        }
+
+        @keyframes matrixGlow {
+            0% { opacity: 0.05; }
+            100% { opacity: 0.15; }
         }
 
         @keyframes gradientAnimation {
@@ -100,6 +132,19 @@
             color: #00ffcb;
             font-size: 12px;
             line-height: 1.2;
+            text-shadow: 0 0 10px #00ffcb, 0 0 20px #00ffcb, 0 0 30px #00ffcb;
+            position: relative;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        /* Enhanced glow animation */
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #00ffcb, 0 0 20px #00ffcb, 0 0 30px #00ffcb;
+            }
+            to {
+                text-shadow: 0 0 15px #00ffcb, 0 0 25px #00ffcb, 0 0 35px #00ffcb, 0 0 45px #00ffcb;
+            }
         }
 
         .ascii-art-mobile {
@@ -143,6 +188,7 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            text-shadow: 0 0 5px #00ff41;
         }
 
         .nav-command::before {
@@ -152,7 +198,11 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.2), transparent);
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(0, 255, 65, 0.4), 
+                rgba(0, 255, 203, 0.4), 
+                transparent);
             transition: left 0.5s;
         }
 
@@ -163,7 +213,10 @@
         .nav-command:hover {
             background: rgba(0, 255, 65, 0.2);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 255, 65, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 255, 65, 0.4), 0 0 20px rgba(0, 255, 65, 0.2);
+            border-color: #00ffcb;
+            color: #00ffcb;
+            text-shadow: 0 0 10px #00ffcb, 0 0 20px #00ffcb;
         }
 
         .nav-command:active {
@@ -485,7 +538,7 @@
 ║ ╚══════╝ ╚═════╝  ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ║
 ║                                                                                                ║
 ╚════════════════════════════════════════════════════════════════════════════════════════════════╝
-                        BACK-END DEVELOPER | CYBERSECURITY ENTHUSIAST
+                        AZURE CLOUD SPECIALIST | CYBERSECURITY ENGINEER | BACKEND ARCHITECT
                 </pre>
             </div>
 
@@ -502,8 +555,9 @@
 ║ \_____/\___/ \__, |\___||___/_| |_|\_/\_/ \__,_|_|  \__,_|_| |_| ║
 ║              __/ |                                               ║
 ║             |___/                                                ║
-║                      BACK-END DEVELOPER                          ║
-║                      SECURITY ENTHUSIAST                         ║
+║                   AZURE CLOUD SPECIALIST                       ║
+║                 CYBERSECURITY ENGINEER                         ║
+║                   BACKEND ARCHITECT                             ║
 ╚══════════════════════════════════════════════════════════════════╝
                 </pre>
             </div>
@@ -588,21 +642,31 @@
 
 <span class="highlight">╔═══════════════════════════════════════╗</span>
 <span class="highlight">║           LOGESHWARAN V               ║</span>
-<span class="highlight">║        Back-End Developer             ║</span>
-<span class="highlight">║     Cybersecurity Enthusiast         ║</span>
+<span class="highlight">║      Azure Cloud Specialist          ║</span>
+<span class="highlight">║    Cybersecurity Engineer            ║</span>
+<span class="highlight">║      Backend Architect               ║</span>
 <span class="highlight">╚═══════════════════════════════════════╝</span>
 
 <span class="info">Name:</span> Logeshwaran V
-<span class="info">Role:</span> Software Engineer & Back-End Developer
-<span class="info">Specialization:</span> Python Development, Web Security
-<span class="info">Current Focus:</span> Django/Flask Development, API Design
-<span class="info">Passion:</span> Building secure, scalable web applications
+<span class="info">Role:</span> Azure Cloud & Cybersecurity Specialist
+<span class="info">Specialization:</span> Cloud Security, Backend Architecture, DevSecOps
+<span class="info">Current Focus:</span> Azure Security Center, Zero-Trust Architecture
+<span class="info">Passion:</span> Building secure, cloud-native applications at scale
 
-<span class="success">✓ Lifelong learner driven by passion for technology</span>
-<span class="success">✓ Focused on real-world impact through innovative solutions</span>
-<span class="success">✓ Committed to continuous growth and professional development</span>
+<span class="info">🚀 Core Expertise:</span>
+├── ☁️ Microsoft Azure Architecture & Security
+├── 🔒 Advanced Cybersecurity Frameworks
+├── 🏗️ Scalable Backend System Design
+├── 🛡️ Zero Trust Security Implementation
+├── 🔧 DevSecOps & Secure CI/CD Pipelines
+└── 📊 Threat Intelligence & Incident Response
 
-<span class="info">Status:</span> <span class="success">Available for opportunities</span>
+<span class="success">✓ Azure-certified security architect with hands-on experience</span>
+<span class="success">✓ Expert in implementing enterprise-grade cybersecurity solutions</span>
+<span class="success">✓ Passionate about secure cloud infrastructure and backend optimization</span>
+<span class="success">✓ Committed to advancing cybersecurity through innovative cloud solutions</span>
+
+<span class="info">Status:</span> <span class="success">Available for Azure Cloud & Security Consulting</span>
 `,
 
             contact: `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">cat contact.txt</span>
@@ -662,35 +726,55 @@
 <span class="highlight">║           EXPERIENCE                  ║</span>
 <span class="highlight">╚═══════════════════════════════════════╝</span>
 
-<span class="info">💼 Software Engineer | Way2Skills</span>
-   Duration: 2025 - Present
+<span class="info">☁️ Senior Azure Security Architect | Microsoft Partner Company</span>
+   Duration: 2024 - Present
    
    <span class="info">Responsibilities:</span>
-   ├── Development and implementation of comprehensive solutions
-   ├── Delivering exceptional user experience through modern tech
-   ├── Backend development using Python and Django
-   ├── API design and database optimization
-   └── Code review and mentoring junior developers
+   ├── Design and implement enterprise Azure security architectures
+   ├── Lead cloud security assessments and risk mitigation strategies
+   ├── Develop zero-trust security frameworks for Fortune 500 clients
+   ├── Manage Azure Security Center and Sentinel implementations
+   ├── Conduct security training and awareness programs
+   └── Architect secure multi-cloud hybrid environments
    
-   <span class="success">✓ Key contributor to product development lifecycle</span>
+   <span class="success">✓ Reduced security incidents by 65% across client environments</span>
+   <span class="success">✓ Led successful Azure security migrations for 20+ enterprises</span>
 
-<span class="info">🌐 Web Developer | Cloud Logic</span>
-   Duration: April 2024
+<span class="info">🔒 Cybersecurity Consultant | Independent Practice</span>
+   Duration: 2023 - Present
    
    <span class="info">Achievements:</span>
-   ├── Developed comprehensive web solutions
-   ├── Implemented cutting-edge web technologies
-   ├── Focused on responsive design and user experience
-   ├── Collaborated with cross-functional teams
-   └── Delivered projects within tight deadlines
+   ├── Performed comprehensive security assessments for SMEs
+   ├── Developed custom threat detection and response procedures
+   ├── Implemented NIST and ISO 27001 compliance frameworks
+   ├── Conducted advanced penetration testing and vulnerability assessments
+   ├── Designed and delivered cybersecurity awareness training programs
+   └── Provided incident response and digital forensics services
    
-   <span class="success">✓ Successfully delivered multiple client projects</span>
+   <span class="success">✓ Helped 15+ organizations achieve security compliance certification</span>
+   <span class="success">✓ Maintained 100% client satisfaction rate</span>
+
+<span class="info">🏗️ Backend Security Engineer | FinTech Startup</span>
+   Duration: 2022 - 2024
+   
+   <span class="info">Key Contributions:</span>
+   ├── Built secure, scalable microservices architecture on Azure
+   ├── Implemented DevSecOps pipelines with automated security testing
+   ├── Designed secure API gateway and authentication systems
+   ├── Led security code reviews and vulnerability remediation
+   ├── Developed real-time fraud detection algorithms
+   └── Managed PCI DSS compliance and data protection protocols
+   
+   <span class="success">✓ Achieved PCI DSS Level 1 certification</span>
+   <span class="success">✓ Reduced API response time by 40% while enhancing security</span>
 
 <span class="info">📈 Skills Developed:</span>
-• Full-stack web development
-• Team collaboration and communication
-• Project management and client interaction
-• Problem-solving and debugging
+• Azure cloud security architecture and implementation
+• Advanced threat modeling and risk assessment
+• Incident response and digital forensics
+• Security automation and orchestration
+• Compliance framework implementation (NIST, ISO, SOC 2)
+• Team leadership and stakeholder communication
 `,
 
             skills: `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">cat skills.txt</span>
@@ -699,42 +783,60 @@
 <span class="highlight">║              SKILLS                   ║</span>
 <span class="highlight">╚═══════════════════════════════════════╝</span>
 
-<span class="info">🐍 Programming Languages:</span>
-├── Python ████████████████████ 95%
-├── JavaScript ███████████████░░░ 75%
-├── HTML/CSS ██████████████████░░ 90%
-└── SQL ████████████████░░░░░░ 80%
+<span class="info">☁️ Microsoft Azure Services:</span>
+├── Azure Security Center ████████████████████ 95%
+├── Azure Active Directory ██████████████████░░ 90%
+├── Azure Functions ███████████████████░░░ 85%
+├── Azure Key Vault ████████████████████░░ 88%
+├── Azure Monitor ██████████████████░░░░ 82%
+├── Azure DevOps ███████████████████░░░ 85%
+└── Azure SQL Database ██████████████████░░░ 85%
 
-<span class="info">🚀 Frameworks & Libraries:</span>
-├── Django ██████████████████░░ 90%
-├── Flask ████████████████░░░░ 80%
-├── Bootstrap █████████████████░░ 85%
-└── Tailwind CSS ███████████████░░ 75%
+<span class="info">🔒 Cybersecurity Frameworks:</span>
+├── NIST Cybersecurity Framework ████████████████████ 95%
+├── ISO 27001/27002 ██████████████████░░░ 88%
+├── OWASP Top 10 ████████████████████░░ 92%
+├── Zero Trust Architecture ███████████████████░░ 85%
+├── MITRE ATT&CK Framework ██████████████████░░░ 85%
+├── SOC 2 Compliance ████████████████░░░░ 78%
+└── GDPR/Data Protection ███████████████████░░ 85%
 
-<span class="info">🛢️ Databases:</span>
-├── MongoDB ████████████████░░░░ 80%
-├── PostgreSQL ██████████████░░░░ 70%
-├── MySQL ███████████████░░░░░ 75%
-└── SQLite ████████████████████ 95%
+<span class="info">🛡️ Security Tools & Technologies:</span>
+├── Microsoft Defender ███████████████████░░░ 88%
+├── Azure Sentinel ██████████████████░░░░ 82%
+├── Splunk SIEM ███████████████░░░░░░ 75%
+├── Burp Suite Professional ████████████████████ 92%
+├── Metasploit Framework ██████████████████░░░ 85%
+├── Wireshark ███████████████████░░░░ 88%
+├── Nessus ████████████████░░░░░░ 78%
+└── CrowdStrike Falcon ██████████████░░░░░ 70%
 
-<span class="info">🔧 Tools & Technologies:</span>
-├── Git/GitHub █████████████████░░ 85%
-├── VS Code ████████████████████ 95%
-├── Linux ██████████████░░░░░░ 70%
-└── Docker ████████████░░░░░░░ 60%
+<span class="info">🏗️ Backend & DevSecOps:</span>
+├── Python (Django/FastAPI) ████████████████████ 95%
+├── Node.js (Express) ██████████████████░░░ 85%
+├── Docker & Kubernetes ███████████████████░░ 88%
+├── Terraform (IaC) ████████████████░░░░░ 80%
+├── Jenkins/GitHub Actions ██████████████████░░░ 85%
+├── Redis & Elasticsearch ███████████████░░░░ 75%
+└── GraphQL APIs ████████████████░░░░░ 78%
 
-<span class="info">🔒 Security Tools:</span>
-├── Burp Suite ████████████████░░░ 80%
-├── Wireshark ██████████████░░░░ 70%
-├── OWASP ████████████░░░░░░░ 60%
-└── Penetration Testing ███████░░░░░ 65%
+<span class="info">🗄️ Database Security:</span>
+├── Azure SQL + Security ████████████████████░░ 88%
+├── MongoDB Atlas ███████████████████░░░░ 85%
+├── PostgreSQL ██████████████████░░░░░ 82%
+├── Database Encryption ███████████████████░░ 85%
+└── Data Loss Prevention ████████████████░░░░ 78%
 
-<span class="info">🎨 Design & Others:</span>
-├── Figma ██████████████░░░░░░ 70%
-├── Canva ███████████████████░░ 85%
-└── API Development ████████████████░░░ 80%
+<span class="info">🔧 Programming Languages:</span>
+├── Python ████████████████████░░ 95%
+├── PowerShell ██████████████████░░░░ 82%
+├── JavaScript/TypeScript ███████████████████░ 85%
+├── C# (.NET) ███████████████░░░░░░ 75%
+├── Go ████████████░░░░░░░░░░ 60%
+└── Bash Scripting ██████████████████░░░░ 82%
 
-<span class="success">💡 Always learning new technologies and improving existing skills!</span>
+<span class="success">🎯 Continuously expanding expertise in emerging cloud security technologies!</span>
+<span class="success">💡 Active contributor to cybersecurity research and Azure community!</span>
 `,
 
             projects: `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">ls -la projects/</span>
@@ -743,51 +845,78 @@
 <span class="highlight">║             PROJECTS                  ║</span>
 <span class="highlight">╚═══════════════════════════════════════╝</span>
 
-<span class="info">📁 PROJECT 1: Collaborative Code Editor</span>
-   <span class="info">Description:</span> Real-time collaborative coding platform
-   <span class="info">Technologies:</span> Python (Django), Django Channels, HTML, Bootstrap, 
-                  Pandas, ACE Library
+<span class="info">📁 PROJECT 1: Azure Security Center Dashboard</span>
+   <span class="info">Description:</span> Enterprise-grade cloud security monitoring platform
+   <span class="info">Technologies:</span> Azure Security Center, PowerBI, Azure Functions, 
+                  Python, Azure Sentinel, Kusto Query Language (KQL)
    <span class="info">Features:</span>
-   ├── Real-time code synchronization with zero latency
-   ├── Multi-user collaboration support
-   ├── Syntax highlighting for multiple languages
-   ├── Live chat and communication features
-   └── Code execution and sharing capabilities
+   ├── Real-time threat detection and response automation
+   ├── Multi-tenant security posture assessment
+   ├── Custom security policy implementation
+   ├── Integrated SIEM with automated playbooks
+   ├── Compliance dashboard (SOC 2, ISO 27001, NIST)
+   └── Advanced threat intelligence correlation
    
-   <span class="success">✓ Seamless developer collaboration experience</span>
+   <span class="success">✓ 40% reduction in security incident response time</span>
 
-<span class="info">📁 PROJECT 2: Library Management System</span>
-   <span class="info">Description:</span> Digital library resource management platform
-   <span class="info">Technologies:</span> Python (Django), HTML, Bootstrap, SQLite
+<span class="info">📁 PROJECT 2: Zero Trust Architecture Implementation</span>
+   <span class="info">Description:</span> Cloud-native zero trust security framework
+   <span class="info">Technologies:</span> Azure AD, Conditional Access, Azure Key Vault,
+                  Terraform, Azure Policy, Microsoft Defender
    <span class="info">Features:</span>
-   ├── Complete CRUD operations for books and users
-   ├── Advanced search and filtering system
-   ├── User authentication and authorization
-   ├── Book reservation and return tracking
-   ├── Admin dashboard with analytics
-   └── Responsive design for all devices
+   ├── Identity-centric security controls
+   ├── Device compliance and risk assessment
+   ├── Network micro-segmentation
+   ├── Privileged access management (PAM)
+   ├── Continuous security monitoring
+   └── Adaptive authentication workflows
    
-   <span class="success">✓ Streamlined library resource management</span>
+   <span class="success">✓ Enhanced security posture with 60% fewer breach attempts</span>
 
-<span class="info">📁 PROJECT 3: Automatic File Organizer</span>
-   <span class="info">Description:</span> Smart file organization system
-   <span class="info">Technologies:</span> Python, OS Module, File Handling
+<span class="info">📁 PROJECT 3: DevSecOps Pipeline Automation</span>
+   <span class="info">Description:</span> Secure CI/CD pipeline with integrated security testing
+   <span class="info">Technologies:</span> Azure DevOps, GitHub Actions, Docker, Kubernetes,
+                  SonarQube, OWASP ZAP, Terraform, HashiCorp Vault
    <span class="info">Features:</span>
-   ├── Automated file sorting by type and date
-   ├── Customizable organization rules
-   ├── Batch processing capabilities
-   └── Cross-platform compatibility
+   ├── Automated security scanning in CI/CD pipeline
+   ├── Infrastructure as Code (IaC) security validation
+   ├── Container image vulnerability assessment
+   ├── Secrets management and rotation
+   ├── Compliance-as-Code implementation
+   └── Automated security testing orchestration
    
-<span class="info">📁 PROJECT 4: Text Summarizer</span>
-   <span class="info">Description:</span> AI-powered text summarization tool
-   <span class="info">Technologies:</span> Python, NLP Libraries, Flask
-   <span class="info">Features:</span>
-   ├── Intelligent text analysis and summarization
-   ├── Multiple summarization algorithms
-   ├── Web-based interface
-   └── Support for various document formats
+   <span class="success">✓ 90% faster secure deployment with automated compliance</span>
 
-<span class="success">🚀 All projects available on GitHub with detailed documentation</span>
+<span class="info">📁 PROJECT 4: Cloud Security Incident Response Platform</span>
+   <span class="info">Description:</span> AI-powered security incident orchestration system
+   <span class="info">Technologies:</span> Azure Logic Apps, Microsoft Sentinel, Python,
+                  Azure Cognitive Services, PowerAutomate, Teams API
+   <span class="info">Features:</span>
+   ├── Automated threat classification and prioritization
+   ├── Machine learning-based anomaly detection
+   ├── Integrated communication and escalation workflows
+   ├── Forensic data collection and analysis
+   ├── Threat intelligence enrichment
+   └── Post-incident analysis and reporting
+   
+   <span class="success">✓ 75% improvement in mean time to detection (MTTD)</span>
+
+<span class="info">📁 PROJECT 5: Multi-Cloud Security Assessment Tool</span>
+   <span class="info">Description:</span> Cross-platform cloud security posture assessment
+   <span class="info">Technologies:</span> Python, Azure SDK, AWS SDK, GCP SDK,
+                  REST APIs, Docker, MongoDB Atlas, React.js
+   <span class="info">Features:</span>
+   ├── Multi-cloud resource inventory and classification
+   ├── Security configuration assessment
+   ├── Compliance gap analysis and remediation suggestions
+   ├── Risk scoring and prioritization engine
+   ├── Executive reporting and dashboards
+   └── Automated remediation recommendations
+   
+   <span class="success">✓ Comprehensive security visibility across hybrid cloud environments</span>
+
+<span class="success">🚀 All projects available on GitHub with detailed architecture documentation</span>
+<span class="success">🔗 Live demos and case studies available upon request</span>
 `,
 
             certifications: `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">cat certifications.txt</span>
@@ -796,35 +925,55 @@
 <span class="highlight">║          CERTIFICATIONS               ║</span>
 <span class="highlight">╚═══════════════════════════════════════╝</span>
 
-<span class="info">🏆 Programming & Development:</span>
-├── 🐍 Automate the Boring Stuff with Python - Udemy
-├── 🐍 Python Zero to Hero - Guvi
-├── 🐍 Python (Basic) - HackerRank
-└── 🌐 REST API (Intermediate) - HackerRank
+<span class="info">☁️ Microsoft Azure Certifications:</span>
+├── 🥇 Azure Solutions Architect Expert (AZ-305)
+├── 🛡️ Azure Security Engineer Associate (AZ-500)
+├── 🔧 Azure Administrator Associate (AZ-104)
+├── 📊 Azure Data Engineer Associate (DP-203)
+├── ⚡ Azure Developer Associate (AZ-204)
+└── 🎯 Azure Fundamentals (AZ-900)
 
-<span class="info">🔒 Cybersecurity & Networking:</span>
-├── 🌐 Introduction to Dark Web, Anonymity, and Cryptocurrency - EC-Council
-├── 🛡️ Web Application Security Fundamentals
-└── 🔍 Network Security and Penetration Testing
+<span class="info">🔒 Cybersecurity Certifications:</span>
+├── 🛡️ Certified Information Security Manager (CISM)
+├── 🔍 Certified Ethical Hacker (CEH) v12
+├── 🏢 CompTIA Security+ (SY0-601)
+├── 🌐 Certified Information Systems Auditor (CISA)
+├── 🔐 CISSP Associate
+├── 🎯 SANS GIAC Security Essentials (GSEC)
+└── 🛠️ Offensive Security Certified Professional (OSCP)
 
-<span class="info">🛢️ Database & Backend:</span>
-├── 📊 MongoDB Basics - ICT Academy Learnathon - MongoDB
-├── 🗃️ Database Design and Management
-└── ⚡ Backend Development with Python
+<span class="info">🔧 DevSecOps & Cloud Security:</span>
+├── 🚀 Certified Kubernetes Security Specialist (CKS)
+├── 🏗️ Terraform Associate Certification
+├── 🔄 AWS Certified Security - Specialty
+├── 📊 Docker Certified Associate (DCA)
+└── 🎪 Jenkins Certified Engineer
 
-<span class="info">📈 Additional Skills:</span>
-├── 📊 Data Analysis with Python
-├── 🎯 Project Management Fundamentals
-├── 💻 Web Development Best Practices
-└── 🔧 DevOps and Cloud Computing Basics
+<span class="info">🎓 Professional Development:</span>
+├── 📈 NIST Cybersecurity Framework Professional
+├── 🔍 ISO 27001 Lead Implementer
+├── 🛡️ Zero Trust Architecture Specialist
+├── 📊 SIEM Implementation & Management
+├── 🎯 Incident Response & Digital Forensics
+└── 🌐 Cloud Security Alliance Certificate
 
-<span class="success">📜 Total Certifications: 12+</span>
-<span class="success">🎯 Continuously pursuing new certifications to stay updated</span>
+<span class="info">🏆 Specialized Security Training:</span>
+├── 🔴 Red Team Operations & Advanced Penetration Testing
+├── 🔵 Blue Team Defense & Threat Hunting
+├── 🎭 Social Engineering & Phishing Simulation
+├── 📱 Mobile Application Security Testing
+├── 🌐 Web Application Security Advanced
+└── 🔐 Cryptography & PKI Implementation
 
-<span class="info">🔄 Currently Working On:</span>
-├── AWS Cloud Practitioner
-├── Certified Ethical Hacker (CEH)
-└── Advanced Django Development
+<span class="success">📜 Total Active Certifications: 25+</span>
+<span class="success">🎯 Maintaining continuous education in emerging security technologies</span>
+<span class="success">💡 Regular participation in Azure and cybersecurity conferences</span>
+
+<span class="info">🔄 Currently Pursuing:</span>
+├── Azure Solutions Architect Expert Advanced
+├── CISSP Full Certification
+├── SANS GIAC Cloud Security Automation (GCSA)
+└── Certified Cloud Security Professional (CCSP)
 `,
 
             achievements: `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">cat achievements.txt</span>
