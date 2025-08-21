@@ -124,6 +124,32 @@
             flex: 1;
             backdrop-filter: blur(10px);
             box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
+            position: relative;
+        }
+
+        /* CRT screen flicker effect */
+        .terminal-body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                transparent 50%, 
+                rgba(0, 255, 65, 0.03) 50%
+            );
+            background-size: 100% 4px;
+            pointer-events: none;
+            animation: flicker 0.15s linear infinite;
+            border-radius: 0 0 10px 10px;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; }
+            98% { opacity: 1; }
+            99% { opacity: 0.98; }
+            100% { opacity: 1; }
         }
 
         .ascii-art {
@@ -229,6 +255,27 @@
             border-radius: 5px;
             padding: 20px;
             border: 1px solid rgba(0, 255, 65, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Scan line effect */
+        .output-area::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ff41, transparent);
+            animation: scanline 3s linear infinite;
+            opacity: 0.7;
+            z-index: 1;
+        }
+
+        @keyframes scanline {
+            0% { top: 0%; }
+            100% { top: 100%; }
         }
 
         .typed-text {
@@ -263,19 +310,44 @@
 
         .cursor {
             animation: blink 1s infinite;
+            color: #00ff41;
+            text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41;
         }
 
         @keyframes blink {
-
-            0%,
-            50% {
+            0%, 50% {
                 opacity: 1;
             }
-
-            51%,
-            100% {
+            51%, 100% {
                 opacity: 0;
             }
+        }
+
+        /* Enhanced text glow effects */
+        .prompt {
+            color: #00ffcb;
+            text-shadow: 0 0 5px #00ffcb, 0 0 10px #00ffcb, 0 0 15px #00ffcb;
+        }
+
+        .command {
+            color: #ffa500;
+            text-shadow: 0 0 5px #ffa500, 0 0 10px #ffa500;
+        }
+
+        .highlight {
+            color: #ff6b6b;
+            font-weight: bold;
+            text-shadow: 0 0 8px #ff6b6b;
+        }
+
+        .success {
+            color: #51cf66;
+            text-shadow: 0 0 8px #51cf66;
+        }
+
+        .info {
+            color: #74c0fc;
+            text-shadow: 0 0 8px #74c0fc;
         }
 
         .skill-bar {
@@ -1174,6 +1246,49 @@
             clear: ""
         };
 
+        // Enhanced typing animation with more realistic delays
+        function typeWriter(text, callback, speed = 15) {
+            const output = document.getElementById('typed-output');
+            let i = 0;
+            output.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    output.innerHTML += text.charAt(i);
+                    i++;
+                    // Variable speed for more realistic typing - faster for normal chars, slower for special chars
+                    let delay = speed;
+                    if (text.charAt(i - 1) === '\n') delay *= 3;
+                    if (text.charAt(i - 1) === ' ') delay *= 0.5;
+                    if ('.,!?'.includes(text.charAt(i - 1))) delay *= 4;
+                    
+                    setTimeout(type, delay + Math.random() * 10);
+                } else if (callback) {
+                    setTimeout(callback, 300);
+                }
+            }
+            type();
+        }
+
+        // Add loading animation effect
+        function showLoadingEffect() {
+            const output = document.getElementById('typed-output');
+            const loadingChars = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'];
+            let i = 0;
+            const loadingInterval = setInterval(() => {
+                output.innerHTML = `<span class="info">Loading</span> ${loadingChars[i]} <span class="success">Initializing Azure Security Protocols...</span>`;
+                i = (i + 1) % loadingChars.length;
+            }, 80);
+            
+            setTimeout(() => {
+                clearInterval(loadingInterval);
+                output.style.opacity = '0';
+                setTimeout(() => {
+                    executeCommand('help');
+                }, 200);
+            }, 1500);
+        }
+
         function executeCommand(command) {
             const output = document.getElementById('typed-output');
 
@@ -1184,17 +1299,26 @@
 
             const commandText = commands[command] || `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">${command}</span>\n\n<span class="highlight">Command not found.</span> Type '<span class="command">help</span>' for available commands.\n\n`;
 
-            // Display content immediately (static)
+            // Display content immediately with a simple fade-in effect for better performance
+            output.style.opacity = '0';
             output.innerHTML = commandText;
-
-            // Add skill bar animations if skills command
-            if (command === 'skills') {
-                animateSkillBars();
-            }
+            
+            // Animate opacity for smooth appearance
+            setTimeout(() => {
+                output.style.transition = 'opacity 0.3s ease-in';
+                output.style.opacity = '1';
+                
+                // Add skill bar animations if skills command
+                if (command === 'skills') {
+                    animateSkillBars();
+                }
+            }, 50);
 
             // Scroll to the output area on mobile
             if (window.innerWidth <= 768) {
-                document.querySelector('.output-area').scrollIntoView({ behavior: 'smooth' });
+                setTimeout(() => {
+                    document.querySelector('.output-area').scrollIntoView({ behavior: 'smooth' });
+                }, 400);
             }
         }
 
@@ -1227,9 +1351,9 @@
             }
         });
 
-        // Initialize with welcome message
+        // Initialize with loading animation and welcome message
         window.addEventListener('load', () => {
-            executeCommand('help');
+            showLoadingEffect();
 
             // Check screen size and adjust ASCII art display
             const checkScreenSize = () => {
