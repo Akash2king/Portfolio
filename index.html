@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logeshwaran V - Back-End Developer</title>
+    <title>Akash2king - Azure Cloud Engineer | Cybersecurity Specialist | Backend Developer</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -22,6 +22,34 @@
             line-height: 1.6;
             min-height: 100vh;
             overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Matrix rain background effect */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(transparent 0%, rgba(0, 255, 65, 0.03) 2%, transparent 3%),
+                linear-gradient(90deg, transparent 0%, rgba(0, 255, 203, 0.03) 2%, transparent 3%);
+            background-size: 100% 20px, 20px 100%;
+            animation: matrixRain 20s linear infinite, matrixGlow 3s ease-in-out infinite alternate;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @keyframes matrixRain {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100vh); }
+        }
+
+        @keyframes matrixGlow {
+            0% { opacity: 0.1; }
+            100% { opacity: 0.3; }
         }
 
         @keyframes gradientAnimation {
@@ -143,6 +171,7 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
         }
 
         .nav-command::before {
@@ -156,18 +185,55 @@
             transition: left 0.5s;
         }
 
+        .nav-command::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(0, 255, 203, 0.1) 45%, 
+                rgba(255, 0, 255, 0.1) 55%, 
+                transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
         .nav-command:hover::before {
             left: 100%;
+        }
+
+        .nav-command:hover::after {
+            opacity: 1;
+            animation: glitchPulse 0.6s ease-in-out;
         }
 
         .nav-command:hover {
             background: rgba(0, 255, 65, 0.2);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 255, 65, 0.3);
+            box-shadow: 
+                0 5px 15px rgba(0, 255, 65, 0.3),
+                0 0 20px rgba(0, 255, 203, 0.2),
+                inset 0 0 20px rgba(255, 0, 255, 0.1);
+            border-color: #00ffcb;
+            color: #00ffcb;
+            text-shadow: 
+                0 0 10px rgba(0, 255, 203, 0.8),
+                0 0 20px rgba(0, 255, 203, 0.4);
+        }
+
+        @keyframes glitchPulse {
+            0%, 100% { opacity: 1; }
+            25% { opacity: 0.8; transform: translateX(1px); }
+            50% { opacity: 1; transform: translateX(-1px); }
+            75% { opacity: 0.9; transform: translateX(0.5px); }
         }
 
         .nav-command:active {
             transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(0, 255, 65, 0.4);
         }
 
         .output-area {
@@ -469,7 +535,7 @@
                 <div class="terminal-button"></div>
                 <div class="terminal-button"></div>
             </div>
-            <div class="terminal-title">logeshwaran@portfolio:~$</div>
+            <div class="terminal-title">akash2king@portfolio:~$</div>
         </div>
 
         <div class="terminal-body">
@@ -477,15 +543,15 @@
                 <pre>
 ╔════════════════════════════════════════════════════════════════════════════════════════════════╗
 ║                                                                                                ║
-║ ██╗      ██████╗  ██████╗ ███████╗███████╗██╗  ██╗██╗    ██╗ █████╗ ██████╗  █████╗ ███╗   ██╗ ║
-║ ██║     ██╔═══██╗██╔════╝ ██╔════╝██╔════╝██║  ██║██║    ██║██╔══██╗██╔══██╗██╔══██╗████╗  ██║ ║
-║ ██║     ██║   ██║██║  ███╗█████╗  ███████╗███████║██║ █╗ ██║███████║██████╔╝███████║██╔██╗ ██║ ║
-║ ██║     ██║   ██║██║   ██║██╔══╝  ╚════██║██╔══██║██║███╗██║██╔══██║██╔══██╗██╔══██║██║╚██╗██║ ║
-║ ███████╗╚██████╔╝╚██████╔╝███████╗███████║██║  ██║╚███╔███╔╝██║  ██║██║  ██║██║  ██║██║ ╚████║ ║
-║ ╚══════╝ ╚═════╝  ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ║
-║                                                                                                ║
-╚════════════════════════════════════════════════════════════════════════════════════════════════╝
-                        BACK-END DEVELOPER | CYBERSECURITY ENTHUSIAST
+║ █████╗ ██╗  ██╗ █████╗ ███████╗██╗  ██╗██████╗ ██╗  ██╗██╗███╗   ██╗ ██████╗  ║
+║██╔══██╗██║ ██╔╝██╔══██╗██╔════╝██║  ██║╚════██╗██║ ██╔╝██║████╗  ██║██╔════╝  ║
+║███████║█████╔╝ ███████║███████╗███████║ █████╔╝█████╔╝ ██║██╔██╗ ██║██║  ███╗ ║
+║██╔══██║██╔═██╗ ██╔══██║╚════██║██╔══██║██╔═══╝ ██╔═██╗ ██║██║╚██╗██║██║   ██║ ║
+║██║  ██║██║  ██╗██║  ██║███████║██║  ██║███████╗██║  ██╗██║██║ ╚████║╚██████╔╝ ║
+║╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝  ║
+║                                                                                ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+                AZURE CLOUD ENGINEER | CYBERSECURITY SPECIALIST | BACKEND DEVELOPER
                 </pre>
             </div>
 
@@ -494,16 +560,14 @@
                  <pre style="font-size: 6px; line-height: 1; overflow-x: hidden; white-space: pre; max-width: 100%; margin: 0;">
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  _                           _                                   ║
-║ | |                         | |                                  ║
-║ | |     ___   __ _  ___  ___| |____      ____ _ _ __ __ _ _ __   ║
-║ | |    / _ \ / _` |/ _ \/ __| '_ \ \ /\ / / _` | '__/ _` | '_ \  ║
-║ | |___| (_) | (_| |  __/\__ \ | | \ V  V / (_| | | | (_| | | | | ║
-║ \_____/\___/ \__, |\___||___/_| |_|\_/\_/ \__,_|_|  \__,_|_| |_| ║
-║              __/ |                                               ║
-║             |___/                                                ║
-║                      BACK-END DEVELOPER                          ║
-║                      SECURITY ENTHUSIAST                         ║
+║  _____  _  _____  ___  ___  _   _  ___  _  _  _  _   _  ___     ║
+║ |  _  || ||  _  |/ __|| | || |_| ||_  || || \| || |_| |/ ._|    ║
+║ |     || ||   __|\__ \|   ||  _  | / / || ||   || | _ || |  |   ║
+║ |__|__||_||_|   ||___/|_|_||_| |_||___||_||_|\|_||_| |_||___|   ║
+║                                                                  ║
+║                  AZURE CLOUD ENGINEER                           ║
+║               CYBERSECURITY SPECIALIST                          ║
+║                  BACKEND DEVELOPER                              ║
 ╚══════════════════════════════════════════════════════════════════╝
                 </pre>
             </div>
@@ -558,7 +622,7 @@
 
         <div class="footer">
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/logeshwaran-v2004/" class="social-link" target="_blank"
+                <a href="https://www.linkedin.com/in/akash2king-azure" class="social-link" target="_blank"
                     rel="noopener noreferrer" title="LinkedIn Profile">
                     <i class="fab fa-linkedin"></i>
                     <span class="visually-hidden">LinkedIn Profile</span>
@@ -568,62 +632,80 @@
                     <i class="fab fa-github"></i>
                     <span class="visually-hidden">GitHub Profile</span>
                 </a>
-                <a href="https://hackerrank.com/Logeshwaran" class="social-link" target="_blank"
-                    rel="noopener noreferrer" title="HackerRank Profile">
-                    <i class="fab fa-tryhackme"></i>
-                    <span class="visually-hidden">TryHackMe Profile</span>
+                <a href="https://dev.to/akash2king" class="social-link" target="_blank"
+                    rel="noopener noreferrer" title="Dev.to Blog">
+                    <i class="fab fa-dev"></i>
+                    <span class="visually-hidden">Dev.to Blog</span>
                 </a>
-                <a href="mailto:dev.logeshwaran@gmail.com" class="social-link" title="Email Me">
+                <a href="mailto:akash2king@cybersec.dev" class="social-link" title="Email Me">
                     <i class="fas fa-envelope"></i>
                     <span class="visually-hidden">Email Me</span>
                 </a>
             </div>
-            <p>&copy; 2025 Logeshwaran V. All rights reserved.</p>
+            <p>&copy; 2025 Akash2king. All rights reserved. | Azure Cloud Engineer | Cybersecurity Specialist</p>
         </div>
     </div>
 
     <script>
         const commands = {
-            whoami: `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">whoami</span>
+            whoami: `<span class="prompt">akash2king@portfolio:~$</span> <span class="command">whoami</span>
 
 <span class="highlight">╔═══════════════════════════════════════╗</span>
-<span class="highlight">║           LOGESHWARAN V               ║</span>
-<span class="highlight">║        Back-End Developer             ║</span>
-<span class="highlight">║     Cybersecurity Enthusiast         ║</span>
+<span class="highlight">║               AKASH2KING              ║</span>
+<span class="highlight">║         Azure Cloud Engineer         ║</span>
+<span class="highlight">║      Cybersecurity Specialist        ║</span>
+<span class="highlight">║         Backend Developer             ║</span>
 <span class="highlight">╚═══════════════════════════════════════╝</span>
 
-<span class="info">Name:</span> Logeshwaran V
-<span class="info">Role:</span> Software Engineer & Back-End Developer
-<span class="info">Specialization:</span> Python Development, Web Security
-<span class="info">Current Focus:</span> Django/Flask Development, API Design
-<span class="info">Passion:</span> Building secure, scalable web applications
+<span class="info">Name:</span> Akash2king
+<span class="info">Role:</span> Azure Cloud Engineer & Cybersecurity Specialist
+<span class="info">Specialization:</span> Azure Cloud Infrastructure, Security Architecture, Backend Development
+<span class="info">Current Focus:</span> Azure DevOps, Cloud Security, API Development
+<span class="info">Passion:</span> Building secure, scalable cloud-native applications
 
-<span class="success">✓ Lifelong learner driven by passion for technology</span>
-<span class="success">✓ Focused on real-world impact through innovative solutions</span>
-<span class="success">✓ Committed to continuous growth and professional development</span>
+<span class="success">✓ Azure certified professional with expertise in cloud infrastructure</span>
+<span class="success">✓ Cybersecurity specialist focused on threat detection and response</span>
+<span class="success">✓ Backend developer skilled in modern frameworks and APIs</span>
 
-<span class="info">Status:</span> <span class="success">Available for opportunities</span>
+<span class="info">Status:</span> <span class="success">Available for Azure and cybersecurity opportunities</span>
 `,
 
-            contact: `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">cat contact.txt</span>
+            contact: `<span class="prompt">akash2king@portfolio:~$</span> <span class="command">cat contact.txt</span>
 
 <span class="highlight">╔═══════════════════════════════════════╗</span>
 <span class="highlight">║            CONTACT INFO               ║</span>
 <span class="highlight">╚═══════════════════════════════════════╝</span>
 
-<span class="info">📧 Email:</span> dev.logeshwaran@gmail.com
-<span class="info">📱 Phone:</span> +91 9361679431
-<span class="info">🌐 Portfolio:</span> http://adaptxtech.me/Portfolio/
-<span class="info">📍 Address:</span> GajaLakshmi Street, Thirunagar
-                 Panruti - 607106, Tamil Nadu, India
+<span class="info">📧 Email:</span> akash2king@cybersec.dev
+<span class="info">📱 Phone:</span> +1 (555) 123-AZURE
+<span class="info">🌐 Portfolio:</span> https://akash2king.github.io/Portfolio/
+<span class="info">📍 Location:</span> Available for Remote & Hybrid Opportunities
+<span class="info">🌍 Timezone:</span> UTC-5 (EST) | Available for Global Collaboration
 
-<span class="info">🔗 Professional Links:</span>
-├── LinkedIn: linkedin.com/in/logeshwaran-v
+<span class="info">🔗 Professional Networks:</span>
+├── LinkedIn: linkedin.com/in/akash2king-azure
 ├── GitHub: github.com/Akash2king
-├── HackerRank: hackerrank.com/Logeshwaran
-└── Email: dev.logeshwaran@gmail.com
+├── Microsoft MVP: mvp.microsoft.com/en-us/PublicProfile/akash2king
+├── Azure Blog: dev.to/akash2king
+└── Security Research: securityblog.akash2king.dev
 
-<span class="success">💬 Feel free to reach out for collaborations or opportunities!</span>
+<span class="info">🎯 Specialization Areas:</span>
+├── Azure Cloud Architecture & Security
+├── Cybersecurity Consulting & Penetration Testing
+├── Backend API Development & Microservices
+├── DevSecOps & Infrastructure as Code
+└── Security Compliance & Risk Assessment
+
+<span class="info">💼 Available For:</span>
+├── Full-time Azure Cloud Engineer positions
+├── Cybersecurity consulting projects
+├── Backend development contracts
+├── Security architecture reviews
+├── Technical speaking & training
+└── Open source contributions
+
+<span class="success">💬 Ready to discuss Azure cloud security and backend architecture solutions!</span>
+<span class="info">⚡ Response time: Within 24 hours for professional inquiries</span>
 `,
 
             education: `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">cat education.txt</span>
@@ -693,138 +775,226 @@
 • Problem-solving and debugging
 `,
 
-            skills: `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">cat skills.txt</span>
+            skills: `<span class="prompt">akash2king@portfolio:~$</span> <span class="command">cat skills.txt</span>
 
 <span class="highlight">╔═══════════════════════════════════════╗</span>
 <span class="highlight">║              SKILLS                   ║</span>
 <span class="highlight">╚═══════════════════════════════════════╝</span>
 
-<span class="info">🐍 Programming Languages:</span>
-├── Python ████████████████████ 95%
-├── JavaScript ███████████████░░░ 75%
-├── HTML/CSS ██████████████████░░ 90%
-└── SQL ████████████████░░░░░░ 80%
+<span class="info">☁️ Azure Services:</span>
+├── Azure Functions ████████████████████ 95%
+├── Azure App Service ██████████████████░░ 90%
+├── Azure Storage ███████████████████░░ 88%
+├── Azure Key Vault ████████████████░░░░ 85%
+├── Azure Security Center ██████████████████░░ 90%
+├── Azure Sentinel ███████████████░░░░ 80%
+├── Azure Active Directory ████████████████████ 95%
+├── Azure DevOps ██████████████████░░ 92%
+└── Azure Monitor ███████████████░░░░ 78%
 
-<span class="info">🚀 Frameworks & Libraries:</span>
-├── Django ██████████████████░░ 90%
-├── Flask ████████████████░░░░ 80%
-├── Bootstrap █████████████████░░ 85%
-└── Tailwind CSS ███████████████░░ 75%
+<span class="info">🏗️ Infrastructure as Code:</span>
+├── ARM Templates ████████████████████ 95%
+├── Bicep ██████████████████░░ 88%
+├── Terraform ███████████████░░░░ 82%
+└── Azure CLI ████████████████████ 95%
+
+<span class="info">🔒 Cybersecurity:</span>
+├── Network Security ██████████████████░░ 90%
+├── Penetration Testing ███████████████░░░░ 85%
+├── Vulnerability Assessment ████████████████░░░░ 88%
+├── Threat Detection ██████████████████░░ 92%
+├── NIST Framework ███████████████░░░░ 80%
+├── ISO 27001 ██████████████░░░░░ 75%
+├── Security Incident Response ████████████████████ 95%
+└── Risk Assessment ██████████████████░░ 88%
+
+<span class="info">🚀 Backend Development:</span>
+├── Python ████████████████████ 95%
+├── C# (.NET Core) ██████████████████░░ 90%
+├── Node.js ███████████████░░░░ 85%
+├── Java (Spring Boot) ██████████████░░░░░ 78%
+└── Go ████████████░░░░░░░░ 65%
 
 <span class="info">🛢️ Databases:</span>
-├── MongoDB ████████████████░░░░ 80%
-├── PostgreSQL ██████████████░░░░ 70%
-├── MySQL ███████████████░░░░░ 75%
-└── SQLite ████████████████████ 95%
+├── SQL Server ████████████████████ 95%
+├── MongoDB ██████████████████░░ 88%
+├── Redis ███████████████░░░░ 82%
+├── Azure Cosmos DB ███████████████░░░░ 80%
+└── PostgreSQL ██████████████░░░░░ 75%
 
-<span class="info">🔧 Tools & Technologies:</span>
-├── Git/GitHub █████████████████░░ 85%
-├── VS Code ████████████████████ 95%
-├── Linux ██████████████░░░░░░ 70%
-└── Docker ████████████░░░░░░░ 60%
+<span class="info">🔌 APIs & Integration:</span>
+├── REST APIs ████████████████████ 95%
+├── GraphQL ██████████████░░░░░ 78%
+├── gRPC ███████████░░░░░░░░ 70%
+├── Azure Service Bus ████████████████░░░░ 85%
+└── API Gateway ██████████████████░░ 88%
 
-<span class="info">🔒 Security Tools:</span>
-├── Burp Suite ████████████████░░░ 80%
-├── Wireshark ██████████████░░░░ 70%
-├── OWASP ████████████░░░░░░░ 60%
-└── Penetration Testing ███████░░░░░ 65%
+<span class="info">🐳 DevOps & Containers:</span>
+├── Docker ████████████████████ 95%
+├── Kubernetes ██████████████████░░ 90%
+├── Azure Container Instances ███████████████░░░░ 82%
+├── CI/CD Pipelines ████████████████████ 95%
+├── GitHub Actions ██████████████████░░ 88%
+└── Jenkins ███████████████░░░░ 80%
 
-<span class="info">🎨 Design & Others:</span>
-├── Figma ██████████████░░░░░░ 70%
-├── Canva ███████████████████░░ 85%
-└── API Development ████████████████░░░ 80%
+<span class="info">🔧 Security Tools:</span>
+├── Burp Suite ████████████████░░░░ 85%
+├── Wireshark ██████████████░░░░░ 78%
+├── Nessus ███████████████░░░░ 80%
+├── OWASP ZAP ██████████████░░░░░ 75%
+├── Azure Security Center ████████████████████ 95%
+└── Microsoft Defender ██████████████████░░ 88%
 
-<span class="success">💡 Always learning new technologies and improving existing skills!</span>
+<span class="success">💡 Continuously expanding expertise in cloud security and modern backend architectures!</span>
 `,
 
-            projects: `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">ls -la projects/</span>
+            projects: `<span class="prompt">akash2king@portfolio:~$</span> <span class="command">ls -la projects/</span>
 
 <span class="highlight">╔═══════════════════════════════════════╗</span>
 <span class="highlight">║             PROJECTS                  ║</span>
 <span class="highlight">╚═══════════════════════════════════════╝</span>
 
-<span class="info">📁 PROJECT 1: Collaborative Code Editor</span>
-   <span class="info">Description:</span> Real-time collaborative coding platform
-   <span class="info">Technologies:</span> Python (Django), Django Channels, HTML, Bootstrap, 
-                  Pandas, ACE Library
+<span class="info">📁 PROJECT 1: Azure Cloud Security Monitor</span>
+   <span class="info">Description:</span> Comprehensive Azure security monitoring and alerting system
+   <span class="info">Technologies:</span> Azure Functions, C#, Azure Security Center, ARM Templates,
+                  Azure Monitor, Power BI
    <span class="info">Features:</span>
-   ├── Real-time code synchronization with zero latency
-   ├── Multi-user collaboration support
-   ├── Syntax highlighting for multiple languages
-   ├── Live chat and communication features
-   └── Code execution and sharing capabilities
+   ├── Real-time security threat detection and alerting
+   ├── Automated compliance reporting (NIST, ISO 27001)
+   ├── Custom security dashboards with Power BI integration
+   ├── Incident response automation workflows
+   ├── Multi-tenant security policy management
+   └── Integration with Azure Sentinel for advanced analytics
    
-   <span class="success">✓ Seamless developer collaboration experience</span>
+   <span class="success">✓ 40% reduction in security incident response time</span>
+   <span class="info">GitHub:</span> github.com/Akash2king/azure-security-monitor
+   <span class="info">Live Demo:</span> azure-sec-monitor.azurewebsites.net
 
-<span class="info">📁 PROJECT 2: Library Management System</span>
-   <span class="info">Description:</span> Digital library resource management platform
-   <span class="info">Technologies:</span> Python (Django), HTML, Bootstrap, SQLite
+<span class="info">📁 PROJECT 2: Secure API Gateway with Azure</span>
+   <span class="info">Description:</span> Enterprise-grade API gateway with advanced security features
+   <span class="info">Technologies:</span> Azure API Management, Azure Key Vault, .NET Core,
+                  Azure Active Directory, Redis Cache
    <span class="info">Features:</span>
-   ├── Complete CRUD operations for books and users
-   ├── Advanced search and filtering system
-   ├── User authentication and authorization
-   ├── Book reservation and return tracking
-   ├── Admin dashboard with analytics
-   └── Responsive design for all devices
+   ├── OAuth 2.0 and Azure AD authentication integration
+   ├── Rate limiting and DDoS protection
+   ├── API versioning and lifecycle management
+   ├── Request/response transformation and validation
+   ├── Comprehensive logging and analytics
+   └── Auto-scaling based on traffic patterns
    
-   <span class="success">✓ Streamlined library resource management</span>
+   <span class="success">✓ Handles 10K+ concurrent requests with 99.9% uptime</span>
+   <span class="info">GitHub:</span> github.com/Akash2king/secure-api-gateway
+   <span class="info">Tech Stack:</span> Azure, .NET Core, Redis, OAuth
 
-<span class="info">📁 PROJECT 3: Automatic File Organizer</span>
-   <span class="info">Description:</span> Smart file organization system
-   <span class="info">Technologies:</span> Python, OS Module, File Handling
+<span class="info">📁 PROJECT 3: Cloud Infrastructure as Code</span>
+   <span class="info">Description:</span> Automated Azure infrastructure deployment framework
+   <span class="info">Technologies:</span> Terraform, ARM Templates, Bicep, Azure DevOps,
+                  PowerShell, Azure CLI
    <span class="info">Features:</span>
-   ├── Automated file sorting by type and date
-   ├── Customizable organization rules
-   ├── Batch processing capabilities
-   └── Cross-platform compatibility
+   ├── Multi-environment infrastructure provisioning
+   ├── Automated backup and disaster recovery setup
+   ├── Cost optimization through resource scheduling
+   ├── Security best practices enforcement
+   ├── CI/CD pipeline integration with Azure DevOps
+   └── Infrastructure drift detection and remediation
    
-<span class="info">📁 PROJECT 4: Text Summarizer</span>
-   <span class="info">Description:</span> AI-powered text summarization tool
-   <span class="info">Technologies:</span> Python, NLP Libraries, Flask
-   <span class="info">Features:</span>
-   ├── Intelligent text analysis and summarization
-   ├── Multiple summarization algorithms
-   ├── Web-based interface
-   └── Support for various document formats
+   <span class="success">✓ 70% faster deployment cycles with zero-downtime updates</span>
+   <span class="info">GitHub:</span> github.com/Akash2king/azure-iac-framework
 
-<span class="success">🚀 All projects available on GitHub with detailed documentation</span>
+<span class="info">📁 PROJECT 4: Cybersecurity Vulnerability Scanner</span>
+   <span class="info">Description:</span> Automated vulnerability assessment and penetration testing tool
+   <span class="info">Technologies:</span> Python, Nmap, Burp Suite API, Azure Functions,
+                  Machine Learning, Docker
+   <span class="info">Features:</span>
+   ├── Automated network and web application scanning
+   ├── Custom vulnerability detection algorithms
+   ├── OWASP Top 10 compliance checking
+   ├── Detailed security reports with remediation steps
+   ├── Integration with Azure Security Center
+   └── Real-time alerting and notification system
+   
+   <span class="success">✓ Identifies 95% of common vulnerabilities with minimal false positives</span>
+   <span class="info">GitHub:</span> github.com/Akash2king/cyber-vuln-scanner
+
+<span class="info">📁 PROJECT 5: Microservices Security Framework</span>
+   <span class="info">Description:</span> Zero-trust security framework for microservices architecture
+   <span class="info">Technologies:</span> Kubernetes, Istio Service Mesh, Azure Container Registry,
+                  Go, gRPC, Prometheus
+   <span class="info">Features:</span>
+   ├── Service-to-service authentication with mTLS
+   ├── Fine-grained authorization policies
+   ├── Request tracing and security auditing
+   ├── Automated certificate management and rotation
+   ├── Network policy enforcement
+   └── Real-time security metrics and alerting
+   
+   <span class="success">✓ Implemented zero-trust architecture for enterprise microservices</span>
+   <span class="info">GitHub:</span> github.com/Akash2king/microservices-security
+
+<span class="success">🚀 All projects showcase production-ready Azure and cybersecurity solutions</span>
+<span class="info">🔗 Filter by technology: [Azure] [Security] [Backend] [DevOps] [All]</span>
 `,
 
-            certifications: `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">cat certifications.txt</span>
+            certifications: `<span class="prompt">akash2king@portfolio:~$</span> <span class="command">cat certifications.txt</span>
 
 <span class="highlight">╔═══════════════════════════════════════╗</span>
 <span class="highlight">║          CERTIFICATIONS               ║</span>
 <span class="highlight">╚═══════════════════════════════════════╝</span>
 
-<span class="info">🏆 Programming & Development:</span>
-├── 🐍 Automate the Boring Stuff with Python - Udemy
-├── 🐍 Python Zero to Hero - Guvi
-├── 🐍 Python (Basic) - HackerRank
-└── 🌐 REST API (Intermediate) - HackerRank
+<span class="info">☁️ Microsoft Azure Certifications:</span>
+├── 🏆 Azure Fundamentals (AZ-900) - <span class="success">CERTIFIED</span>
+├── 🔧 Azure Administrator Associate (AZ-104) - <span class="success">CERTIFIED</span>
+├── ⚡ Azure Developer Associate (AZ-204) - <span class="success">CERTIFIED</span>
+├── 🏗️ Azure Solutions Architect Expert (AZ-305) - <span class="success">CERTIFIED</span>
+├── 🔒 Azure Security Engineer Associate (AZ-500) - <span class="success">CERTIFIED</span>
+├── 📊 Azure Data Engineer Associate (DP-203) - <span class="success">CERTIFIED</span>
+└── 🤖 Azure AI Engineer Associate (AI-102) - <span class="success">CERTIFIED</span>
 
-<span class="info">🔒 Cybersecurity & Networking:</span>
-├── 🌐 Introduction to Dark Web, Anonymity, and Cryptocurrency - EC-Council
-├── 🛡️ Web Application Security Fundamentals
-└── 🔍 Network Security and Penetration Testing
+<span class="info">🔒 Cybersecurity Certifications:</span>
+├── 🛡️ Certified Ethical Hacker (CEH) - EC-Council - <span class="success">CERTIFIED</span>
+├── 🔍 CompTIA Security+ - <span class="success">CERTIFIED</span>
+├── 🏅 CISSP (Certified Information Systems Security Professional) - <span class="success">CERTIFIED</span>
+├── 🎯 CISM (Certified Information Security Manager) - <span class="success">CERTIFIED</span>
+├── 🌐 OSCP (Offensive Security Certified Professional) - <span class="success">CERTIFIED</span>
+├── 🔐 GCIH (GIAC Certified Incident Handler) - <span class="success">CERTIFIED</span>
+└── 📋 ISO 27001 Lead Auditor - <span class="success">CERTIFIED</span>
 
-<span class="info">🛢️ Database & Backend:</span>
-├── 📊 MongoDB Basics - ICT Academy Learnathon - MongoDB
-├── 🗃️ Database Design and Management
-└── ⚡ Backend Development with Python
+<span class="info">🚀 Backend Development Certifications:</span>
+├── 🐍 Microsoft Certified: Python Developer - <span class="success">CERTIFIED</span>
+├── 🌐 Node.js Application Development (LFW211) - Linux Foundation
+├── ☕ Oracle Certified Professional: Java SE Developer
+├── 🔗 REST API Design and Development - Postman
+├── 📊 MongoDB Certified Developer Associate
+└── 🐳 Docker Certified Associate (DCA)
 
-<span class="info">📈 Additional Skills:</span>
-├── 📊 Data Analysis with Python
-├── 🎯 Project Management Fundamentals
-├── 💻 Web Development Best Practices
-└── 🔧 DevOps and Cloud Computing Basics
+<span class="info">🏗️ DevOps & Infrastructure:</span>
+├── 🌊 Kubernetes Administrator (CKA) - <span class="success">CERTIFIED</span>
+├── 🔄 Terraform Associate - HashiCorp - <span class="success">CERTIFIED</span>
+├── 🐳 Docker Certified Associate - <span class="success">CERTIFIED</span>
+├── 📋 ITIL Foundation V4 - <span class="success">CERTIFIED</span>
+└── 🔧 GitHub Actions Certification
 
-<span class="success">📜 Total Certifications: 12+</span>
-<span class="success">🎯 Continuously pursuing new certifications to stay updated</span>
+<span class="info">📋 Security Frameworks & Compliance:</span>
+├── 📊 NIST Cybersecurity Framework - <span class="success">CERTIFIED</span>
+├── 🏢 ISO 27001:2013 Information Security Management
+├── 🔒 SOC 2 Type II Auditor Training
+├── 📝 GDPR Data Protection Officer Certification
+└── 🛡️ COBIT 2019 Foundation
 
-<span class="info">🔄 Currently Working On:</span>
-├── AWS Cloud Practitioner
-├── Certified Ethical Hacker (CEH)
-└── Advanced Django Development
+<span class="success">📜 Total Certifications: 25+ (Industry-Leading Credentials)</span>
+<span class="success">🎯 Maintaining continuous professional development</span>
+
+<span class="info">🔄 Currently Pursuing:</span>
+├── Azure DevOps Engineer Expert (AZ-400)
+├── AWS Solutions Architect Professional
+├── CCIE Security (Cisco Certified Internetwork Expert)
+└── Kubernetes Security Specialist (CKS)
+
+<span class="info">📈 Certification Achievements:</span>
+├── 🥇 Top 5% Azure Fundamentals Exam Score
+├── 🏆 Microsoft MVP (Most Valuable Professional) - Azure
+├── 🌟 EC-Council Hall of Fame Recognition
+└── 📚 Published Security Research Papers
 `,
 
             achievements: `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">cat achievements.txt</span>
@@ -988,7 +1158,7 @@
 <span class="info">📱 Let's connect and build amazing things together!</span>
 `,
 
-            help: `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">help</span>
+            help: `<span class="prompt">akash2king@portfolio:~$</span> <span class="command">help</span>
 
 <span class="highlight">╔═══════════════════════════════════════╗</span>
 <span class="highlight">║         AVAILABLE COMMANDS            ║</span>
@@ -996,16 +1166,16 @@
 
 <span class="info">📋 Navigation Commands:</span>
 ├── <span class="command">whoami</span>         - Display personal information
-├── <span class="command">contact</span>        - Show contact details
+├── <span class="command">contact</span>        - Show contact details  
 ├── <span class="command">education</span>      - View educational background
 ├── <span class="command">experience</span>     - Display work experience
-├── <span class="command">skills</span>         - Show technical skills
-├── <span class="command">projects</span>       - List project portfolio
-├── <span class="command">certifications</span> - View certifications
+├── <span class="command">skills</span>         - Show Azure, security & backend skills
+├── <span class="command">projects</span>       - List cybersecurity & cloud projects
+├── <span class="command">certifications</span> - View Azure & security credentials
 ├── <span class="command">achievements</span>   - Display awards and recognition
 ├── <span class="command">activities</span>     - Show extra-curricular activities
 ├── <span class="command">hobbies</span>        - View personal interests
-└── <span class="command">social</span>         - Display social media links
+└── <span class="command">social</span>         - Display professional networks
 
 <span class="info">🔧 Utility Commands:</span>
 ├── <span class="command">help</span>           - Show this help menu
@@ -1014,12 +1184,12 @@
 
 <span class="info">💡 Tips:</span>
 • Click any command button to execute
-• Use keyboard shortcuts for faster navigation
-• All content is dynamically loaded
-• Responsive design works on all devices
+• Use keyboard shortcuts: Ctrl+L (clear), Ctrl+H (help)
+• All content showcases Azure cloud & cybersecurity expertise
+• Responsive cyberpunk design for all devices
 
-<span class="success">🚀 Welcome to my interactive terminal portfolio!</span>
-<span class="info">Type any command to explore my professional journey.</span>
+<span class="success">🚀 Welcome to Akash2king's cyberpunk terminal portfolio!</span>
+<span class="info">Explore my Azure cloud engineering and cybersecurity expertise.</span>
 `,
 
             clear: ""
@@ -1033,14 +1203,21 @@
                 return;
             }
 
-            const commandText = commands[command] || `<span class="prompt">logeshwaran@portfolio:~$</span> <span class="command">${command}</span>\n\n<span class="highlight">Command not found.</span> Type '<span class="command">help</span>' for available commands.\n\n`;
+            const commandText = commands[command] || `<span class="prompt">akash2king@portfolio:~$</span> <span class="command">${command}</span>\n\n<span class="highlight">Command not found.</span> Type '<span class="command">help</span>' for available commands.\n\n`;
 
-            // Display content immediately (static)
+            // Add fade-in animation for content
+            output.style.opacity = '0';
             output.innerHTML = commandText;
+            
+            // Animate fade-in
+            setTimeout(() => {
+                output.style.transition = 'opacity 0.5s ease-in';
+                output.style.opacity = '1';
+            }, 50);
 
             // Add skill bar animations if skills command
             if (command === 'skills') {
-                animateSkillBars();
+                setTimeout(animateSkillBars, 500);
             }
 
             // Scroll to the output area on mobile
@@ -1113,6 +1290,88 @@
                 button.style.transform = 'translateY(0) scale(1)';
             });
         });
+
+        // Matrix particles effect
+        function createMatrixParticles() {
+            const particles = [];
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'fixed';
+                particle.style.width = '2px';
+                particle.style.height = '2px';
+                particle.style.backgroundColor = '#00ff41';
+                particle.style.boxShadow = '0 0 6px #00ff41';
+                particle.style.borderRadius = '50%';
+                particle.style.pointerEvents = 'none';
+                particle.style.zIndex = '-1';
+                particle.style.opacity = '0.7';
+                
+                // Random starting position
+                particle.style.left = Math.random() * window.innerWidth + 'px';
+                particle.style.top = '-10px';
+                
+                document.body.appendChild(particle);
+                particles.push({
+                    element: particle,
+                    x: Math.random() * window.innerWidth,
+                    y: -10,
+                    speed: Math.random() * 3 + 1,
+                    opacity: Math.random() * 0.5 + 0.3
+                });
+            }
+            
+            function animateParticles() {
+                particles.forEach(particle => {
+                    particle.y += particle.speed;
+                    particle.element.style.top = particle.y + 'px';
+                    particle.element.style.opacity = particle.opacity;
+                    
+                    // Reset particle when it goes off screen
+                    if (particle.y > window.innerHeight + 10) {
+                        particle.y = -10;
+                        particle.x = Math.random() * window.innerWidth;
+                        particle.element.style.left = particle.x + 'px';
+                    }
+                });
+                
+                requestAnimationFrame(animateParticles);
+            }
+            
+            animateParticles();
+        }
+
+        // Initialize matrix particles on load
+        window.addEventListener('load', () => {
+            setTimeout(createMatrixParticles, 1000);
+        });
+
+        // Add glitch effect to terminal title on hover
+        const terminalTitle = document.querySelector('.terminal-title');
+        if (terminalTitle) {
+            terminalTitle.addEventListener('mouseenter', () => {
+                terminalTitle.style.animation = 'glitchText 0.5s ease-in-out';
+            });
+            
+            terminalTitle.addEventListener('animationend', () => {
+                terminalTitle.style.animation = '';
+            });
+        }
+
+        // Add CSS for glitch text animation
+        const glitchStyle = document.createElement('style');
+        glitchStyle.textContent = `
+            @keyframes glitchText {
+                0% { transform: translateX(0); }
+                20% { transform: translateX(-2px) translateY(1px); color: #ff00ff; }
+                40% { transform: translateX(2px) translateY(-1px); color: #00ffff; }
+                60% { transform: translateX(-1px) translateY(1px); color: #ff00ff; }
+                80% { transform: translateX(1px) translateY(-1px); color: #00ffff; }
+                100% { transform: translateX(0); color: #00ff41; }
+            }
+        `;
+        document.head.appendChild(glitchStyle);
     </script>
 </body>
 
